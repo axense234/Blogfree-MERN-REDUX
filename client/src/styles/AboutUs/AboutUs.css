@@ -1,0 +1,25 @@
+.aboutus-section {
+  padding: 0rem 12.5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+
+.aboutus-page-content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutus-page-content h1 {
+  font-size: var(--font-big);
+  letter-spacing: 9.6px;
+  align-self: center;
+  margin-bottom: 5rem;
+}
+
+.aboutus-page-content p {
+  font-size: 20px;
+}

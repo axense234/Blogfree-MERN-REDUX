@@ -1,0 +1,89 @@
+.blog-settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 2;
+  height: 100%;
+  min-width: 40%;
+}
+
+.blog-settings-container > h1 {
+  font-size: var(--font-big);
+  color: white;
+}
+
+.blog-settings-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 3px solid black;
+  flex-direction: column;
+  width: 70%;
+  max-width: 90%;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #f7c40a;
+  border-radius: 1rem;
+}
+
+.blog-settings-form-div {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.blog-settings-form-div > label {
+  font-size: 24px;
+}
+
+.blog-settings-form-div > input,
+.blog-settings-form-div > select,
+.blog-settings-form-div > textarea {
+  background-color: #07982f;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.blog-settings-form-div > textarea {
+  resize: vertical;
+  height: 10rem;
+  min-height: 5rem;
+  max-height: 15rem;
+}
+
+.blog-settings-form-div:nth-child(3) {
+  flex-direction: column;
+}
+
+.blog-settings-buttons {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.blog-settings-buttons > button {
+  border: none;
+  background-color: #07982f;
+  align-self: center;
+  margin-top: auto;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0rem;
+  color: white;
+  transition: transform 0.25s;
+}
+
+.blog-settings-buttons > button:hover {
+  transform: scale(1.05);
+}
+
+.blog-settings-buttons > button:first-child {
+  width: 55%;
+}
+
+.blog-settings-buttons > button:last-child {
+  width: 25%;
+}

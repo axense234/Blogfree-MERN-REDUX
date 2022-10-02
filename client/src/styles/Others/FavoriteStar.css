@@ -1,0 +1,17 @@
+.search-results-star {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+}
+
+.view-blog-content > .search-results-star {
+  right: 2rem;
+  top: 0rem;
+  font-size: 5rem;
+  color: yellow;
+}
+
+.profile-details > .search-results-star {
+  font-size: 3rem;
+}

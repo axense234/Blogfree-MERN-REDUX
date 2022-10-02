@@ -1,0 +1,20 @@
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  font-size: var(--font-small);
+  margin-right: auto;
+  margin-left: 3.5rem;
+}
+
+.footer-links > a {
+  text-decoration: none;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+.footer-links > a:hover {
+  background-color: #043b13;
+  color: white;
+}

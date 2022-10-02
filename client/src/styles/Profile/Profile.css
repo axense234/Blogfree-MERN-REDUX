@@ -1,0 +1,15 @@
+.profile-section {
+  padding: 3rem 12.5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.profile-page-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}

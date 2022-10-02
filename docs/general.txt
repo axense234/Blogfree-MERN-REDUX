@@ -1,0 +1,22 @@
+Colours Used:
+-orange
+-green
+-blue
+-white/black
+
+
+Categories for blogs:
+-gaming
+-nature
+-reading
+-relationships
+-controversial
+-animals
+-hygiene
+-programming
+-sports
+-anything else(question mark)
+
+How to handle the Favorite Blog/Author system:
+-have a Favorite Blogs/Favorite Authors array on each User,
+by default they are both empty

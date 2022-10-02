@@ -1,0 +1,44 @@
+.author-profile-comp-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #043b13;
+  max-width: 97.5%;
+  border-bottom-right-radius: 1rem;
+  padding: 0.75rem;
+  gap: 1rem;
+  color: white;
+}
+
+.author-profile-comp-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  padding-right: 1rem;
+}
+
+.author-profile-comp-buttons > img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.author-profile-comp-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-profile-comp-info > h1 {
+  font-size: 1.5rem;
+}
+
+.author-profile-comp-buttons > .blog-profile-comp-buttons > svg:nth-child(2),
+.author-profile-comp-buttons > .blog-profile-comp-buttons > a:nth-child(2) {
+  color: pink;
+}
+
+.author-profile-comp-buttons > .blog-profile-comp-buttons {
+  width: 10%;
+}

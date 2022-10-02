@@ -1,0 +1,21 @@
+.footer-sm {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-sm > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--font-small);
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+.footer-sm > a:hover {
+  background-color: #043b13;
+  color: white;
+}

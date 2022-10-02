@@ -1,0 +1,26 @@
+.navbar-links-container {
+  display: flex;
+  gap: 2rem;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-links-container > a {
+  text-decoration: none;
+  color: white;
+  font-size: var(--font-small);
+  letter-spacing: 1.2px;
+  transition: color 0.5s, background-color 0.5s;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+.navbar-links-container > a:hover {
+  color: black;
+  background-color: #f7c40a;
+}
+
+.active {
+  border: 1px solid #f7c40a;
+}

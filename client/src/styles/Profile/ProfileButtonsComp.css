@@ -1,0 +1,38 @@
+.blog-profile-comp-buttons {
+  display: flex;
+  gap: 0.25rem;
+  width: 20%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.blog-profile-comp-buttons > a,
+.blog-profile-comp-buttons > svg {
+  font-size: 1.6rem;
+  transition: transform 0.25s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.blog-profile-comp-buttons > a:hover,
+.blog-profile-comp-buttons > svg:hover {
+  transform: scale(1.3);
+}
+
+.star-fill-blog-icon,
+.star-outline-blog-icon {
+  color: yellow;
+}
+
+.edit-blog-icon {
+  color: green;
+}
+
+.trash-blog-icon {
+  color: red;
+}
+
+.view-blog-icon {
+  color: pink;
+}

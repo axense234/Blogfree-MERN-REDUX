@@ -1,0 +1,28 @@
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: flex-end;
+  background-color: white;
+  border: 2px solid var(--second-green);
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: 7.5rem;
+}
+
+.searchbar-container:focus {
+  outline: 2px solid var(--second-green);
+}
+
+.searchbar-container input {
+  width: 100%;
+  border: none;
+}
+
+.searchbar-container input:focus {
+  outline: none;
+}
+
+#fasearch {
+  margin: 3px;
+}

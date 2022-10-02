@@ -1,0 +1,37 @@
+/* Global Styles */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 2px solid gray;
+}
+/* Vars */
+:root {
+  --font-small: 12px;
+  --font-medium: 30px;
+  --font-big: 96px;
+  --comp-paddings: 12.5rem;
+  --main-green: #043b13;
+  --second-green: #07982f;
+}
+
+body {
+  background-color: #043b13;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#root,
+body,
+html {
+  width: 100%;
+  height: 100%;
+}

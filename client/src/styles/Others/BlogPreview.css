@@ -1,0 +1,40 @@
+.blog-preview-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+}
+
+.blog-preview-container > h1 {
+  font-size: var(--font-big);
+  color: white;
+  align-self: center;
+}
+
+.blog-preview-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: 1rem;
+}
+
+.blog-preview-info > .blog-reactions > button {
+  color: white;
+}
+
+.blog-preview-info > .blog-reactions {
+  padding: 0.5rem;
+}
+
+.blog-preview-info > h2 {
+  font-size: var(--font-medium);
+}
+
+.blog-preview-info p:first-of-type {
+  width: 100%;
+  text-align: end;
+  padding-right: 3rem;
+  font-size: 20px;
+}

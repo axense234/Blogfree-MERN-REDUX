@@ -1,0 +1,77 @@
+.profile-details {
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: #f7c40a;
+  max-width: 32%;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+  position: relative;
+}
+
+.profile-details img {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+}
+
+.profile-details-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  height: auto;
+  list-style: none;
+}
+
+.profile-details-text > li > span {
+  border-radius: 0.2rem;
+  padding: 0.3rem;
+  background-color: #043b13;
+  color: white;
+}
+
+.profile-details-text h3 {
+  align-self: center;
+  font-size: 24px;
+}
+
+.profile-details-text > li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-details-text > li:nth-child(5) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.profile-details-text > li > p {
+  font-size: 1.2rem;
+}
+
+.profile-details > button {
+  border: none;
+  background-color: #07982f;
+  align-self: center;
+  width: 50%;
+  margin-top: auto;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0rem;
+  color: white;
+  transition: transform 0.25s;
+  font-size: 1.1rem;
+  z-index: 2;
+}
+
+.profile-details > button:hover {
+  transform: scale(1.1);
+}

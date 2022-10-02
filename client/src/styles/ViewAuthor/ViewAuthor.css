@@ -1,0 +1,16 @@
+.view-author-section {
+  padding: 0rem 12.5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  z-index: 2;
+}
+
+.view-author-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}

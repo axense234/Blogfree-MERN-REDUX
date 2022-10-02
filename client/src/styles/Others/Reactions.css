@@ -1,0 +1,11 @@
+.blog-reactions {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.15rem;
+}
+
+.blog-reactions button {
+  background-color: inherit;
+  border: none;
+}

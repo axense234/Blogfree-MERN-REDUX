@@ -1,0 +1,16 @@
+.edit-create-blog-section {
+  padding: 0rem 15rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.edit-create-blog-content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 5rem;
+  gap: 15rem;
+}

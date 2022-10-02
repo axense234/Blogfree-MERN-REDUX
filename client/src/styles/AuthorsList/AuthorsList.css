@@ -1,0 +1,27 @@
+.authors-list-section {
+  padding: 0rem 12.5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  align-self: flex-start;
+  padding-bottom: 3rem;
+}
+
+.authors-list-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5rem;
+  height: 100%;
+  gap: 3rem;
+}
+
+.authors-list-content > h1 {
+  font-size: var(--font-big);
+  color: white;
+  margin-top: 4rem;
+}
