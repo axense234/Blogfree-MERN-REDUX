@@ -12,7 +12,10 @@ const Searchbar = () => {
     <form
       className='searchbar-container'
       tabIndex='0'
-      onSubmit={() => navigate("search-results")}
+      onSubmit={(e) => {
+        e.preventDefault();
+        navigate("search-results");
+      }}
     >
       <input type='text' />
       <FaSearch id='fasearch' />
