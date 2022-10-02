@@ -10,14 +10,17 @@ const NavLinks = () => {
   const { pathname } = useLocation();
 
   const RenderedNavbarLinks = NavbarLinks.map((link) => {
-    if (link.linkDest !== pathname) {
-      return (
-        <Link to={link.linkDest} key={link.id}>
-          {link.linkName}
-        </Link>
-      );
+    if (link.linkDest === pathname) {
+      return null;
     }
+    return (
+      <Link to={link.linkDest} key={link.id}>
+        {link.linkName}
+      </Link>
+    );
   });
+
+  console.log(RenderedNavbarLinks);
 
   return <div className='navbar-links-container'>{RenderedNavbarLinks}</div>;
 };
