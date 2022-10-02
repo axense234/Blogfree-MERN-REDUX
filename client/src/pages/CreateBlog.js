@@ -12,7 +12,7 @@ import { TemplateBlogs } from "../data";
 const EditBlog = () => {
   const { blogId } = useParams();
 
-  const specificBlog = TemplateBlogs.find((blog) => blog.id == blogId);
+  const specificBlog = TemplateBlogs.find((blog) => blog.id === Number(blogId));
 
   return (
     <main className='edit-create-blog-section'>
