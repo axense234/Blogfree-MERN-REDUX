@@ -24,20 +24,24 @@
 .profile-hub-choices {
   display: flex;
   gap: 1rem;
-  width: 25%;
+  width: 40%;
 }
 
 .profile-hub-choices button,
-.profile-hub-input button {
+.profile-hub-input button,
+.profile-hub-choices > a {
   border: none;
+  text-align: center;
+  text-decoration: none;
   background-color: #07982f;
   align-self: center;
-  width: 50%;
+  width: 33%;
   margin-top: auto;
   border-radius: 0.5rem;
   padding: 0.5rem 0rem;
   color: white;
   transition: transform 0.25s;
+  font-size: 0.9rem;
 }
 
 .profile-hub-choices button:hover,

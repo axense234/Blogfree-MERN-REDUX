@@ -7,7 +7,7 @@ import { TemplateBlogs, TemplateAuthors } from "../../data";
 import AuthorProfileComp from "../Profile/AuthorProfileComp";
 import BlogProfileComp from "../Profile/BlogProfileComp";
 // React Router
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProfileHub = ({ type }) => {
   let renderedTemplateBlogs = TemplateBlogs;
@@ -38,6 +38,7 @@ const ProfileHub = ({ type }) => {
         <div className='profile-hub-choices'>
           <button>Blogs</button>
           <button>Authors</button>
+          <Link to='/blogs/create-blog'>Create Blog</Link>
         </div>
         <div className='profile-hub-input'>
           <input type='text' />

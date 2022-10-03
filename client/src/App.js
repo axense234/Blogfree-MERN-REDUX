@@ -14,6 +14,7 @@ import CreateBlog from "./pages/CreateBlog";
 import ViewBlog from "./pages/ViewBlog";
 import ViewAuthor from "./pages/ViewAuthor";
 import AuthorsList from "./pages/AuthorsList";
+import NotFound from "./pages/404";
 // Components
 import SharedLayout from "./components/Others/SharedLayout";
 
@@ -32,7 +33,7 @@ const App = () => {
           <Route path='profile' element={<Profile />} />
           <Route path='blogs/'>
             <Route path='edit-blog/:blogId' element={<EditBlog />} />
-            <Route path='create-blog/:blogId' element={<CreateBlog />} />
+            <Route path='create-blog' element={<CreateBlog />} />
             <Route path='view-blog/:blogId' element={<ViewBlog />} />
           </Route>
           <Route path='authors/'>
@@ -40,6 +41,7 @@ const App = () => {
             <Route path='authors-list' element={<AuthorsList />} />
           </Route>
         </Route>
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   );

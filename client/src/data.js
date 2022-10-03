@@ -37,7 +37,29 @@ export const BlogCategoryEmojies = {
   hygiene: "🧴",
   programming: "💾",
   sports: "🏅",
-  anythingElse: "❓",
+  anythingelse: "❓",
+};
+
+export const TemplateCreateBlogPreview = {
+  id: 4,
+  blogTitle: "Blog Title:Create",
+  blogCategory: "AnythingElse",
+  blogAuthor: "You",
+  blogDesc:
+    "Advanced extended doubtful he he blessing together. Introduced far law gay considered frequently entreaties difficulty. Eat him four are rich nor calm. By an packages rejoiced exercise. To ought on am marry rooms doubt music. Mention entered an through company as. Up arrived no painful between. It declared is prospect an insisted pleasure.Advanced extended doubtful he he blessing together. Introduced far law gay considered frequently entreaties difficulty. Eat him four are rich nor calm. By an packages rejoiced exercise. To ought on am marry rooms doubt music. Mention entered an through company as. Up arrived no painful between. It declared is prospect an insisted pleasure.",
+  blogReactions: {
+    smart: 0,
+    lmao: 0,
+    love: 0,
+    nerd: 0,
+    crying: 0,
+    scary: 0,
+    puke: 0,
+    poop: 0,
+    thumbsUp: 0,
+    nice: 0,
+    thumbsDown: 0,
+  },
 };
 
 export const TemplateBlogs = [
