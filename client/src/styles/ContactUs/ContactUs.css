@@ -1,11 +1,10 @@
 .contactus-section {
-  padding: 0rem 12.5rem;
+  padding: 3rem 12.5rem;
   height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 15rem;
-  margin-top: 4rem;
 }
 
 .contactus-page-content {
