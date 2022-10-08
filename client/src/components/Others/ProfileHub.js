@@ -38,12 +38,16 @@ const ProfileHub = ({ type }) => {
         <div className='profile-hub-choices'>
           <button>Blogs</button>
           <button>Authors</button>
-          <Link to='/blogs/create-blog'>Create Blog</Link>
+          {type === "Author" || (
+            <Link to='/blogs/create-blog'>Create Blog</Link>
+          )}
         </div>
         <div className='profile-hub-input'>
           <input type='text' />
-          <button>Sort By</button>
-          <button>Category</button>
+          <div>
+            <button>Sort By</button>
+            <button>Category</button>
+          </div>
         </div>
       </nav>
       <section className='profile-hub-content'>{renderedItems}</section>

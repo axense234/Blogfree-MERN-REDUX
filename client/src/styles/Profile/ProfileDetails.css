@@ -33,6 +33,7 @@
   border-radius: 0.2rem;
   padding: 0.3rem;
   background-color: #043b13;
+  text-align: center;
   color: white;
 }
 
@@ -63,7 +64,7 @@
   background-color: #07982f;
   align-self: center;
   width: 50%;
-  margin-top: auto;
+  margin-top: 2rem;
   border-radius: 0.5rem;
   padding: 0.75rem 0rem;
   color: white;
@@ -74,4 +75,21 @@
 
 .profile-details > button:hover {
   transform: scale(1.1);
+}
+
+@media all and (max-width: 1700px) {
+  .profile-details {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .profile-details img {
+    width: 175px;
+    height: 175px;
+  }
+  .profile-details-text > li:nth-child(5) > p {
+    font-size: 0.8rem;
+  }
 }

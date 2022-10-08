@@ -4,10 +4,11 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
+  transition: all 0.25s;
 }
 
 *:focus {
-  outline: 2px solid gray;
+  outline: 3.5px solid cyan;
 }
 /* Vars */
 :root {

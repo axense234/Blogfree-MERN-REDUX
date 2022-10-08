@@ -58,3 +58,17 @@
 .form-container > button:focus {
   outline: 1px solid black;
 }
+
+@media all and (max-width: 1275px) {
+  .form-section {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .form-container > button {
+    width: 80%;
+    margin-top: 3rem;
+  }
+}

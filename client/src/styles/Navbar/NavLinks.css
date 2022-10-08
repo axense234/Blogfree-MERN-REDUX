@@ -24,3 +24,9 @@
 .active {
   border: 1px solid #f7c40a;
 }
+
+@media all and (max-width: 1150px) {
+  .navbar-links-container {
+    display: none;
+  }
+}

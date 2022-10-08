@@ -11,6 +11,7 @@
   font-size: 64px;
   letter-spacing: 6.4px;
   color: white;
+  text-align: center;
 }
 
 .search-results-temp-content-container {
@@ -20,4 +21,34 @@
   justify-content: space-between;
   padding: 4rem;
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media all and (max-width: 1375px) {
+  .search-results-temp-content-container {
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+}
+
+@media all and (max-width: 1375px) {
+  .search-results-temp-content > h1 {
+    font-size: 40px;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .search-results-temp-content-container {
+    padding: 4rem 2rem;
+  }
+  .search-results-temp-content > h1 {
+    font-size: 25px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .search-results-temp-content-container {
+    padding: 4rem 0.5rem;
+  }
 }

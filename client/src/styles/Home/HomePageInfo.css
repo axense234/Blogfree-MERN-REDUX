@@ -17,7 +17,7 @@
 
 .home-page-info > a {
   text-decoration: none;
-  margin-bottom: 5rem;
+  margin-bottom: 7.5rem;
   background-color: #f7c40a;
   color: #043b13;
   border: none;
@@ -38,4 +38,35 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: min-content;
+}
+
+@media all and (max-width: 1400px) {
+  .home-page-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-page-info > a {
+    margin-top: 7rem;
+    padding: 0.5rem 0;
+    align-self: center;
+  }
+  .home-page-info-text {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .home-page-info-text > h1 {
+    font-size: 60px;
+  }
+  .home-page-info-text > p {
+    font-size: 20px;
+  }
+  .home-page-info > a {
+    font-size: 1rem;
+  }
 }

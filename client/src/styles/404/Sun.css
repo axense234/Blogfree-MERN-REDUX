@@ -2,4 +2,20 @@
   position: absolute;
   top: 0;
   right: 0;
+  width: 504px;
+  height: 412px;
+}
+
+@media all and (max-width: 750px) {
+  .sun-img {
+    width: 412px;
+    height: 320px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .sun-img {
+    width: 320px;
+    height: 228px;
+  }
 }

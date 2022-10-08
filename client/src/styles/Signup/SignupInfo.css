@@ -20,3 +20,34 @@
   font-size: var(--font-medium);
   width: 50%;
 }
+
+@media all and (max-width: 1275px) {
+  .signup-info > p {
+    width: 85%;
+  }
+  .signup-info > img {
+    display: none;
+  }
+  .signup-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .signup-info > h1 {
+    font-size: 60px;
+  }
+  .signup-info > p {
+    font-size: 20px;
+    width: 75%;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .signup-info > h1 {
+    font-size: 50px;
+  }
+}

@@ -12,7 +12,12 @@ const BlogSettings = ({ type }) => {
       <form className='blog-settings-form'>
         <div className='blog-settings-form-div'>
           <label htmlFor='blog-title'>Blog Title:</label>
-          <input type='text' name='blog-title' id='blog-title' />
+          <input
+            type='text'
+            name='blog-title'
+            id='blog-title'
+            autoComplete='off'
+          />
         </div>
         <div className='blog-settings-form-div'>
           <label htmlFor='blog-category'>Blog Category:</label>

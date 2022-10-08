@@ -20,3 +20,15 @@
   flex-direction: column;
   justify-content: center;
 }
+
+@media all and (max-width: 1075px) {
+  .footer-container {
+    padding: 1rem 5rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .footer-container {
+    padding: 1rem;
+  }
+}

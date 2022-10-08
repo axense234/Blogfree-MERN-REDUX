@@ -40,3 +40,34 @@
 .blog-profile-comp-buttons-container > .blog-reactions {
   gap: 0.5rem;
 }
+
+@media all and (max-width: 910px) {
+  .blog-profile-comp-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
+@media all and (max-width: 625px) {
+  .blog-profile-comp-buttons-container > .blog-reactions {
+    display: none;
+  }
+  .blog-profile-comp-container {
+    gap: 2rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .blog-profile-comp-info h1 {
+    font-size: 1.2rem;
+  }
+  .blog-profile-comp-info h2 {
+    font-size: 1rem;
+  }
+  .blog-profile-comp-info p {
+    font-size: 0.8rem;
+  }
+}

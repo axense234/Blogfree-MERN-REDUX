@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 15rem;
+  margin-top: 4rem;
 }
 
 .contactus-page-content {
@@ -22,4 +23,40 @@
 
 .contactus-page-content p {
   font-size: var(--font-medium);
+}
+
+@media all and (max-width: 725px) {
+  .contactus-page-content h1 {
+    font-size: 60px;
+  }
+  .contactus-page-content p {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .contactus-section {
+    padding: 0rem 5rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .contactus-page-content h1 {
+    font-size: 40px;
+  }
+  .contactus-page-content p {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .contactus-section {
+    padding: 0 2rem;
+  }
+  .contactus-page-content h1 {
+    font-size: 25px;
+  }
+  .contactus-page-content p {
+    font-size: 10px;
+  }
 }

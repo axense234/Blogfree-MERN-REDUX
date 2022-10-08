@@ -25,3 +25,33 @@
   color: white;
   margin-top: 4rem;
 }
+
+@media all and (max-width: 1250px) {
+  .authors-list-section {
+    padding: 0 5rem;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .authors-list-section {
+    padding: 0 2rem;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .authors-list-content > h1 {
+    font-size: 60px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .authors-list-section {
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 375px) {
+  .authors-list-content > h1 {
+    font-size: 40px;
+  }
+}

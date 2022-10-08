@@ -15,3 +15,15 @@
   align-items: center;
   justify-content: center;
 }
+
+@media all and (max-width: 1150px) {
+  .search-results-section {
+    padding: 0rem 5rem;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .search-results-section {
+    padding: 0rem 0.5rem;
+  }
+}

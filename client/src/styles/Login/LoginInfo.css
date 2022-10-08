@@ -19,3 +19,34 @@
   font-size: var(--font-medium);
   width: 50%;
 }
+
+@media all and (max-width: 1275px) {
+  .login-info > p {
+    width: 85%;
+  }
+  .login-info > img {
+    display: none;
+  }
+  .login-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .login-info > h1 {
+    font-size: 60px;
+  }
+  .login-info > p {
+    font-size: 20px;
+    width: 75%;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .login-info > h1 {
+    font-size: 50px;
+  }
+}

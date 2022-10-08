@@ -36,9 +36,9 @@
 
 .view-blog-info p:first-of-type {
   width: 100%;
-  text-align: end;
   font-size: 50px;
   padding-right: 5rem;
+  text-align: end;
 }
 
 .view-blog-info p:first-of-type > a {
@@ -65,4 +65,68 @@
 .view-blog-info > .blog-reactions > button {
   font-size: 2rem;
   color: white;
+}
+
+@media all and (max-width: 1500px) {
+  .view-blog-section {
+    padding: 0 6rem;
+  }
+  .view-blog-info > .blog-reactions > button {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .view-blog-section {
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .view-blog-info > h1 {
+    font-size: 60px;
+  }
+  .view-blog-info p:first-of-type {
+    font-size: 40px;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .view-blog-info > .blog-reactions > button {
+    font-size: 1rem;
+  }
+  .view-blog-content {
+    min-width: 90%;
+    max-width: 90%;
+  }
+}
+
+@media all and (max-width: 530px) {
+  .view-blog-info > h1 {
+    font-size: 40px;
+  }
+  .view-blog-info p:first-of-type {
+    font-size: 30px;
+  }
+  .view-blog-info > .blog-reactions > button {
+    font-size: 0.75rem;
+  }
+  .view-blog-info p:nth-of-type(2) {
+    font-size: 0.9rem;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .view-blog-info > h1 {
+    font-size: 30px;
+  }
+  .view-blog-info p:first-of-type {
+    font-size: 20px;
+  }
+  .view-blog-info > .blog-reactions > button {
+    font-size: 0.5rem;
+  }
+  .view-blog-info p:nth-of-type(2) {
+    font-size: 0.7rem;
+  }
 }

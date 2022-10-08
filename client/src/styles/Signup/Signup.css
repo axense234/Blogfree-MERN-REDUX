@@ -5,8 +5,43 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 5rem;
+  margin-top: 2.5rem;
 }
 
 .signup-page-content {
   display: flex;
+  justify-content: space-between;
+  /* border: 1px solid white; */
+  max-height: 100%;
+}
+
+@media all and (max-width: 1275px) {
+  .signup-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .signup-container {
+    padding: 0rem 5rem;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .signup-container {
+    padding: 0rem 2.5rem;
+  }
+  .signup-page-content {
+    gap: 5rem;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .signup-container {
+    padding: 0rem 1.5rem;
+  }
 }

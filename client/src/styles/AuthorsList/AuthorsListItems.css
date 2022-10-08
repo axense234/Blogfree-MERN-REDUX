@@ -32,3 +32,55 @@
 .authors-list-items-li > p {
   font-size: 1.3rem;
 }
+
+@media all and (max-width: 1500px) {
+  .authors-list-items-li {
+    width: 80%;
+  }
+  .authors-list-items-container {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 975px) {
+  .authors-list-items-container {
+    padding: 0;
+  }
+  .authors-list-items-li {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 650px) {
+  .authors-list-items-li > h2 {
+    font-size: 20px;
+  }
+  .authors-list-items-li > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .authors-list-section {
+    padding: 0;
+  }
+  .authors-list-items-li > h2 {
+    font-size: 15px;
+  }
+  .authors-list-items-li > img {
+    width: 35px;
+    height: 35px;
+  }
+  .authors-list-items-li > p {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .authors-list-items-li {
+    flex-wrap: wrap;
+    width: 80%;
+  }
+}

@@ -6,3 +6,24 @@
   padding: 1rem var(--comp-paddings);
   background-color: inherit;
 }
+
+#menu-nav-button {
+  display: none;
+}
+
+@media screen and (max-width: 1150px) {
+  #menu-nav-button {
+    display: inline;
+    font-size: 40px;
+    color: #f7c40a;
+  }
+  .navbar-container {
+    padding: 1rem 5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+}

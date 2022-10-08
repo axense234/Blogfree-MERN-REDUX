@@ -3,3 +3,17 @@
   width: 447px;
   user-select: none;
 }
+
+@media all and (max-width: 720px) {
+  .right-mountains {
+    height: 337px;
+    width: 247px;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .right-mountains {
+    height: 337px;
+    width: 147px;
+  }
+}

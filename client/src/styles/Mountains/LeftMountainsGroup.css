@@ -3,3 +3,17 @@
   width: 271px;
   user-select: none;
 }
+
+@media all and (max-width: 720px) {
+  .left-mountains {
+    height: 300px;
+    width: 171px;
+  }
+}
+
+@media all and (max-width: 720px) {
+  .left-mountains {
+    height: 250px;
+    width: 111px;
+  }
+}

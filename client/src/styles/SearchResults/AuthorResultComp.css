@@ -6,7 +6,8 @@
   background-color: #f7c40a;
   width: 30%;
   padding: 1rem;
-  gap: 1rem;
+  padding-top: 0.25rem;
+  gap: 1.5rem;
   border-radius: 0.6rem;
   border: 3px solid black;
   z-index: 2;
@@ -47,4 +48,32 @@
 
 .author-result-comp-container > a:hover {
   transform: scale(1.1);
+}
+
+@media all and (max-width: 1750px) {
+  .author-result-comp-container {
+    width: 45%;
+  }
+}
+
+@media all and (max-width: 1375px) {
+  .author-result-comp-container {
+    width: 85%;
+  }
+}
+@media all and (max-width: 800px) {
+  .author-result-comp-container {
+    width: 100%;
+  }
+}
+@media all and (max-width: 500px) {
+  .author-result-comp-info h1 {
+    font-size: 1.3rem;
+  }
+  .author-result-comp-info p {
+    font-size: 0.9rem;
+  }
+  .author-result-comp-container > a {
+    width: 75%;
+  }
 }

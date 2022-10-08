@@ -36,3 +36,11 @@
 .view-blog-icon {
   color: pink;
 }
+
+@media all and (max-width: 910px) {
+  .blog-profile-comp-buttons {
+    width: 90%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

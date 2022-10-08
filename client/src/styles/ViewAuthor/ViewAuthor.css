@@ -14,3 +14,31 @@
   justify-content: space-between;
   width: 100%;
 }
+
+@media all and (max-width: 1700px) {
+  .view-author-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+@media all and (max-width: 1175px) {
+  .view-author-section {
+    padding: 3rem 5rem;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .view-author-section {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .view-author-section {
+    padding: 2rem 1rem;
+  }
+}

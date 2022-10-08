@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "./Logo";
 import Searchbar from "./Searchbar";
 import NavLinks from "./NavLinks";
+import MenuButton from "./MenuButton";
 
 // CSS
 import "../../styles/Navbar/Navbar.css";
@@ -13,6 +14,7 @@ const Navbar = () => {
       <Logo />
       <Searchbar />
       <NavLinks />
+      <MenuButton />
     </nav>
   );
 };

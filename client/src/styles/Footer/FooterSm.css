@@ -19,3 +19,13 @@
   background-color: #043b13;
   color: white;
 }
+
+@media screen and (max-width: 1000px) {
+  .footer-sm {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-sm > a > p {
+    display: none;
+  }
+}

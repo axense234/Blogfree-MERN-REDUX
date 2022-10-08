@@ -4,6 +4,8 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  position: relative;
+  padding: 5rem 0;
 }
 
 .not-found-page-content {
@@ -20,6 +22,9 @@
 
 .not-found-page-content > h1 {
   font-size: var(--font-big);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .not-found-page-content > h1 > span {
@@ -33,6 +38,7 @@
   justify-content: center;
   gap: 3rem;
   width: 60%;
+  padding: 2rem 0;
 }
 
 .not-found-page-buttons > a {
@@ -52,4 +58,42 @@
 
 .not-found-page-buttons > a:hover {
   transform: scale(1.1);
+}
+
+@media all and (max-width: 800px) {
+  .not-found-page-buttons > a {
+    width: 80%;
+  }
+  .not-found-page-container {
+    position: relative;
+    height: auto;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .not-found-page-content > h1 {
+    font-size: 60px;
+  }
+  .not-found-page-content > h1 > span {
+    font-size: 40px;
+  }
+  .not-found-page-content {
+    gap: 2.5rem;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .not-found-page-buttons {
+    width: 80%;
+  }
+  .not-found-page-content > h1 {
+    font-size: 50px;
+  }
+  .not-found-page-content > h1 > span {
+    font-size: 20px;
+  }
+  .not-found-page-buttons > a {
+    padding: 0.4rem 0;
+    font-size: 0.75rem;
+  }
 }

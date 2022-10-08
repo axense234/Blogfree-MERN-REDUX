@@ -23,3 +23,33 @@
 .aboutus-page-content p {
   font-size: 20px;
 }
+
+@media all and (max-width: 925px) {
+  .aboutus-section {
+    padding: 2rem 5rem;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .aboutus-page-content h1 {
+    font-size: 60px;
+  }
+  .aboutus-page-content p {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .aboutus-section {
+    padding: 2rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .aboutus-page-content h1 {
+    font-size: 35px;
+  }
+  .aboutus-page-content p {
+    font-size: 10px;
+  }
+}

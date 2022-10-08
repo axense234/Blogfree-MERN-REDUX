@@ -9,8 +9,9 @@
 }
 
 .blog-settings-container > h1 {
-  font-size: var(--font-big);
+  font-size: calc(var(--font-big) - 10px);
   color: white;
+  margin-bottom: 2rem;
 }
 
 .blog-settings-form {
@@ -43,6 +44,11 @@
   background-color: #07982f;
   border: none;
   border-radius: 0.5rem;
+  color: white;
+}
+
+.blog-settings-form-div > input:focus {
+  background-color: #07982f;
 }
 
 .blog-settings-form-div > textarea {
@@ -86,4 +92,53 @@
 
 .blog-settings-buttons > button:last-child {
   width: 25%;
+}
+
+@media all and (max-width: 1430px) {
+  .blog-settings-form {
+    width: 100%;
+  }
+  .blog-settings-container {
+    width: 60%;
+  }
+  .blog-settings-container > h1 {
+    font-size: 70px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .blog-settings-container {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .blog-settings-container > h1 {
+    font-size: 60px;
+  }
+  .blog-settings-form-div > label {
+    font-size: 18px;
+  }
+  .blog-settings-buttons > button {
+    font-size: 0.9rem;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .blog-settings-container > h1 {
+    font-size: 40px;
+  }
+  .blog-settings-form-div > label {
+    font-size: 15px;
+  }
+  .blog-settings-buttons > button {
+    font-size: 0.7rem;
+  }
+  .blog-settings-form-div > input,
+  .blog-settings-form-div > select {
+    font-size: 0.7rem;
+  }
+  .blog-settings-buttons {
+    width: 100%;
+  }
 }
