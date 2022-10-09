@@ -5,24 +5,35 @@
   justify-content: space-between;
   padding: 1rem var(--comp-paddings);
   background-color: inherit;
+  width: 100%;
+}
+
+.navbar-container i {
+  z-index: 4;
+  transition: color 0.1s;
+  display: none;
 }
 
 #menu-nav-button {
   display: none;
+  z-index: 4;
 }
 
-@media screen and (max-width: 1150px) {
+@media all and (max-width: 1150px) {
   #menu-nav-button {
     display: inline;
     font-size: 40px;
-    color: #f7c40a;
+    color: inherit;
+  }
+  .navbar-container i {
+    display: inline;
   }
   .navbar-container {
     padding: 1rem 5rem;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
   .navbar-container {
     padding: 1rem;
   }

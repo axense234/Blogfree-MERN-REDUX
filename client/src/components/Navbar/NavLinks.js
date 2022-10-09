@@ -20,8 +20,6 @@ const NavLinks = () => {
     );
   });
 
-  console.log(RenderedNavbarLinks);
-
   return <div className='navbar-links-container'>{RenderedNavbarLinks}</div>;
 };
 
