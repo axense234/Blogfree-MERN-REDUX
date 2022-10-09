@@ -21,12 +21,8 @@
   text-decoration: none;
   background-color: var(--second-green);
   padding: 1.5rem 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding-left: 3rem;
   color: black;
   max-height: 15%;
-}
-
-.menu-nav-container > a:hover {
-  font-size: 2rem;
 }
