@@ -1,14 +1,13 @@
 import React from "react";
 // Navbar Links
 import { NavbarLinks } from "../../data";
-// React Router
-import { Link, useLocation } from "react-router-dom";
 // CSS
 import "../../styles/Navbar/NavLinks.css";
+// React Router
+import { Link, useLocation } from "react-router-dom";
 
 const NavLinks = () => {
   const { pathname } = useLocation();
-
   const RenderedNavbarLinks = NavbarLinks.map((link) => {
     if (link.linkDest === pathname) {
       return null;
