@@ -12,19 +12,36 @@ const ProfileButtonsComp = ({ favorite, type, id }) => {
   return (
     <div className='blog-profile-comp-buttons'>
       {favorite ? (
-        <AiFillStar className='star-fill-blog-icon' />
+        <AiFillStar
+          className='star-fill-blog-icon'
+          aria-label='Favorite Star Full'
+        />
       ) : (
-        <AiOutlineStar className='star-outline-blog-icon' />
+        <AiOutlineStar
+          className='star-outline-blog-icon'
+          aria-label='Favorite Star Empty'
+        />
       )}
       {type === "Author" ? null : (
         <>
-          <Link to={`/blogs/edit-blog/${id}`} className='edit-blog-icon'>
+          <Link
+            to={`/blogs/edit-blog/${id}`}
+            className='edit-blog-icon'
+            aria-label='Edit Blog Icon'
+          >
             <AiFillEdit />
           </Link>
-          <BsFillTrashFill className='trash-blog-icon' />
+          <BsFillTrashFill
+            className='trash-blog-icon'
+            aria-label='Trash Blog Icon'
+          />
         </>
       )}
-      <Link to={`/blogs/view-blog/${id}`} className='view-blog-icon'>
+      <Link
+        to={`/blogs/view-blog/${id}`}
+        className='view-blog-icon'
+        aria-label='View Full Blog Icon'
+      >
         <MdPreview />
       </Link>
     </div>
