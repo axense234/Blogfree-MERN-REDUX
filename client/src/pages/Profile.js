@@ -8,7 +8,7 @@ import "../styles/Profile/Profile.css";
 
 const Profile = () => {
   // condition based on jwttoken
-  if (1 === 1) {
+  if (1 === 2) {
     return <NoProfile />;
   }
 

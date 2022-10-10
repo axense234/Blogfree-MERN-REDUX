@@ -16,8 +16,9 @@ const Searchbar = () => {
         e.preventDefault();
         navigate("search-results");
       }}
+      aria-label={"Blogfree Searchbar"}
     >
-      <input type='text' />
+      <input type='text' aria-label='Search' />
       <FaSearch id='fasearch' />
     </form>
   );
