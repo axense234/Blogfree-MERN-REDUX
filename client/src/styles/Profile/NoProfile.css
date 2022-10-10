@@ -46,3 +46,42 @@
 .no-profile-section-links a:hover {
   transform: scale(1.1);
 }
+
+@media all and (max-width: 1350px) {
+  .no-profile-section {
+    padding: 0 5rem;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .no-profile-page-content h1 {
+    font-size: 2.5rem;
+  }
+  .no-profile-section-links a {
+    padding: 0.5rem 0;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .no-profile-page-content h1 {
+    font-size: 1.5rem;
+  }
+  .no-profile-section-links {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .no-profile-section {
+    padding: 0 2rem;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .no-profile-section-links {
+    width: 100%;
+  }
+  .no-profile-section-links a {
+    width: 35%;
+  }
+}
