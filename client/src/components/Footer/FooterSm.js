@@ -8,11 +8,11 @@ const FooterSm = () => {
   return (
     <div className='footer-sm'>
       <a href='https://www.instagram.com' target='_blank'>
-        <BsInstagram />
+        <BsInstagram aria-label='Instagram Icon' />
         <p>Instagram</p>
       </a>
       <a href='https://www.github.com' target='_blank'>
-        <BsGithub />
+        <BsGithub aria-label='Github Icon' />
         <p>Github</p>
       </a>
     </div>
