@@ -1,22 +1,20 @@
 import React from "react";
 // React Icons
 import { BsInstagram, BsGithub } from "react-icons/bs";
-// React Router
-import { Link } from "react-router-dom";
 // CSS
 import "../../styles/Footer/FooterSm.css";
 
 const FooterSm = () => {
   return (
     <div className='footer-sm'>
-      <Link>
+      <a href='https://www.instagram.com' target='_blank'>
         <BsInstagram />
         <p>Instagram</p>
-      </Link>
-      <Link>
+      </a>
+      <a href='https://www.github.com' target='_blank'>
         <BsGithub />
         <p>Github</p>
-      </Link>
+      </a>
     </div>
   );
 };

@@ -11,6 +11,8 @@ const Logo = () => {
         src='https://res.cloudinary.com/birthdayreminder/image/upload/v1663917048/Logo_ph5clb.png'
         alt='Logo'
         className='logo-img'
+        width='55px'
+        height='55px'
       />
       <p>Blogfree</p>
     </Link>
