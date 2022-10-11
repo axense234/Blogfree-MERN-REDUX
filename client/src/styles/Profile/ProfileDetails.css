@@ -92,4 +92,8 @@
   .profile-details-text > li:nth-child(6) > p {
     font-size: 0.8rem;
   }
+  .profile-details > button {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+  }
 }

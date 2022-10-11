@@ -60,7 +60,7 @@
   }
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 430px) {
   .blog-profile-comp-info h1 {
     font-size: 1.2rem;
   }
