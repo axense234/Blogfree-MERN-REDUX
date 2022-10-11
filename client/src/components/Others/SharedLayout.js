@@ -32,12 +32,16 @@ const SharedLayout = () => {
   // Close Menu once client resizes window
   useEffect(() => {
     window.addEventListener("resize", () => {
-      console.log(window.innerWidth);
+      console.log("did it");
       if (window.innerWidth >= 1150 && showMenu) {
+        console.log("set it to false");
         setShowMenu(false);
       }
     });
-  }, []);
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, [showMenu]);
 
   return (
     <>
