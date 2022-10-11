@@ -8,9 +8,19 @@ import "../../styles/Profile/ProfileButtonsComp.css";
 // React Router
 import { Link } from "react-router-dom";
 
-const ProfileButtonsComp = ({ favorite, type, id }) => {
+const ProfileButtonsComp = ({
+  favorite,
+  profileComponentType,
+  profilePageType,
+  id,
+}) => {
+  const linkDestination =
+    profileComponentType === "Blog"
+      ? `/blogs/view-blog/${id}`
+      : `/authors/view-author/${id}`;
   return (
     <div className='blog-profile-comp-buttons'>
+      {/* Favorite */}
       {favorite ? (
         <AiFillStar
           className='star-fill-blog-icon'
@@ -22,7 +32,8 @@ const ProfileButtonsComp = ({ favorite, type, id }) => {
           aria-label='Favorite Star Empty'
         />
       )}
-      {type === "Author" ? null : (
+      {/* Options */}
+      {profilePageType === "Profile" ? (
         <>
           <Link
             to={`/blogs/edit-blog/${id}`}
@@ -36,24 +47,15 @@ const ProfileButtonsComp = ({ favorite, type, id }) => {
             aria-label='Trash Blog Icon'
           />
         </>
-      )}
-      {type == "Author" ? (
-        <Link
-          to={`/authors/view-author/${id}`}
-          className='view-blog-icon'
-          aria-label='View Full Blog Icon'
-        >
-          <MdPreview />
-        </Link>
-      ) : (
-        <Link
-          to={`/blogs/view-blog/${id}`}
-          className='view-blog-icon'
-          aria-label='View Full Blog Icon'
-        >
-          <MdPreview />
-        </Link>
-      )}
+      ) : null}
+      {/* Preview */}
+      <Link
+        to={linkDestination}
+        className='view-blog-icon'
+        aria-label='View Full Blog Icon'
+      >
+        <MdPreview />
+      </Link>
     </div>
   );
 };

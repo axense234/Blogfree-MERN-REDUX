@@ -10,6 +10,7 @@ const AuthorProfileComp = ({
   authorProfileDesc,
   authorJob,
   id,
+  type,
 }) => {
   return (
     <article className='author-profile-comp-container'>
@@ -17,8 +18,9 @@ const AuthorProfileComp = ({
         <img src={authorImg} alt={authorUsername} />
         <AuthorProfileButtonsComp
           favorite={id === 1 ? true : false}
-          type='Author'
           id={id}
+          profileComponentType='Author'
+          profilePageType={type}
         />
       </div>
       <div className='author-profile-comp-info'>

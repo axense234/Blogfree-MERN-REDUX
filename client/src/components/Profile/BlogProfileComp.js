@@ -26,7 +26,8 @@ const BlogProfileComp = ({
         <BlogProfileButtonsComp
           favorite={id === 4 ? true : false}
           id={id}
-          type={type}
+          profileComponentType='Blog'
+          profilePageType={type}
         />
       </div>
       <div className='blog-profile-comp-info'>

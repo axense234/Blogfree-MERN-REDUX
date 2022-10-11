@@ -28,7 +28,13 @@ const ProfileHub = ({ type }) => {
     })
     .concat(
       TemplateAuthors.map((author) => {
-        return <AuthorProfileComp key={author.authorUsername} {...author} />;
+        return (
+          <AuthorProfileComp
+            key={author.authorUsername}
+            {...author}
+            type={type}
+          />
+        );
       })
     );
 

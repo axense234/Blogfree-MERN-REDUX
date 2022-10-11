@@ -15,8 +15,8 @@ const Profile = () => {
   return (
     <main className='profile-section'>
       <div className='profile-page-content'>
-        <ProfileDetails />
-        <ProfileHub />
+        <ProfileDetails type='Profile' />
+        <ProfileHub type='Profile' />
       </div>
     </main>
   );
