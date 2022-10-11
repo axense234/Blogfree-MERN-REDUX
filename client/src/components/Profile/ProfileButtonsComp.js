@@ -37,13 +37,23 @@ const ProfileButtonsComp = ({ favorite, type, id }) => {
           />
         </>
       )}
-      <Link
-        to={`/blogs/view-blog/${id}`}
-        className='view-blog-icon'
-        aria-label='View Full Blog Icon'
-      >
-        <MdPreview />
-      </Link>
+      {type == "Author" ? (
+        <Link
+          to={`/authors/view-author/${id}`}
+          className='view-blog-icon'
+          aria-label='View Full Blog Icon'
+        >
+          <MdPreview />
+        </Link>
+      ) : (
+        <Link
+          to={`/blogs/view-blog/${id}`}
+          className='view-blog-icon'
+          aria-label='View Full Blog Icon'
+        >
+          <MdPreview />
+        </Link>
+      )}
     </div>
   );
 };

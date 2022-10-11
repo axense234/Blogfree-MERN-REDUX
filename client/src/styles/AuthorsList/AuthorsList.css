@@ -21,7 +21,6 @@
 .authors-list-content > h1 {
   font-size: var(--font-big);
   color: white;
-  margin-top: 4rem;
 }
 
 @media all and (max-width: 1250px) {
@@ -45,6 +44,7 @@
 @media all and (max-width: 500px) {
   .authors-list-section {
     padding: 0;
+    padding-bottom: 3rem;
   }
 }
 

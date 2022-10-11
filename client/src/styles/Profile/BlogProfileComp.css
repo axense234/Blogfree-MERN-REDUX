@@ -71,3 +71,15 @@
     font-size: 0.8rem;
   }
 }
+
+@media all and (max-width: 350px) {
+  .blog-profile-comp-info h1 {
+    font-size: 1rem;
+  }
+  .blog-profile-comp-info h2 {
+    font-size: 0.8rem;
+  }
+  .blog-profile-comp-info p {
+    font-size: 0.7rem;
+  }
+}

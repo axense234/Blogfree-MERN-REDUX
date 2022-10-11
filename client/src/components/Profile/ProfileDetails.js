@@ -60,6 +60,10 @@ const ProfileDetails = ({ type }) => {
           <p>{authorBlogsCount}</p>
         </li>
         <li>
+          <span>Stars Count:</span>
+          <p>{authorBlogsCount}</p>
+        </li>
+        <li>
           <span>Description:</span>
           <p>{authorProfileDesc.slice(0, 400)}...</p>
         </li>
