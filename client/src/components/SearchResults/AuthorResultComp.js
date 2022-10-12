@@ -20,7 +20,12 @@ const AuthorResultComp = ({
         <h1>{authorUsername}</h1>
         <p>{authorProfileDesc.slice(0, 150)}...</p>
       </div>
-      <Link to={`/authors/view-author/${id}`}>Read More</Link>
+      <Link
+        to={`/authors/view-author/${id}`}
+        aria-label='Link to Full Author Details'
+      >
+        Read More
+      </Link>
     </article>
   );
 };

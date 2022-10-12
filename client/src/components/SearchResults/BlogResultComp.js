@@ -32,7 +32,12 @@ const BlogResultComp = ({
         <h2>...by {blogAuthor}</h2>
         <p>{blogDesc.slice(0, 200)}...</p>
       </div>
-      <Link to={`/blogs/view-blog/${id}`}>Read More</Link>
+      <Link
+        to={`/blogs/view-blog/${id}`}
+        aria-label='Link to Full Blog Details'
+      >
+        Read More
+      </Link>
     </article>
   );
 };
