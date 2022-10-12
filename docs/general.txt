@@ -20,3 +20,17 @@ Categories for blogs:
 How to handle the Favorite Blog/Author system:
 -have a Favorite Blogs/Favorite Authors array on each User,
 by default they are both empty
+
+Lighthouse Reports:
+
+Home Page: D: 95 100 92 100; M: 80 94 83 97
+Login Page: D: 97 100 92 100; M: 81 96 83 98
+Sign Up Page: D: 98 100 92 100; M: 82 96 83 98
+About Us Page: D: 98 100 92 100; M: 78 94 83 89
+Contact Us Page: D: 99 100 92 100; M: 82 100 83 97
+Profile Page: D: 98 85 83 100; M: 99 85 83 98
+Authors List Page: D: 100 97 92 100; M: 97 96 83 98
+View Author Page: D: 100 85 92 100; M: 97 85 83 98
+View Blog Page: D: 99 100 92 100; M: 
+Search Results Page:
+Error Page:

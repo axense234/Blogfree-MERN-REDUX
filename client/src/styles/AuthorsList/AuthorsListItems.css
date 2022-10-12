@@ -6,6 +6,7 @@
   width: 100%;
   row-gap: 2rem;
   padding: 0 5rem;
+  list-style: none;
 }
 
 .authors-list-items-li {
@@ -18,18 +19,18 @@
   text-decoration: none;
 }
 
-.authors-list-items-li > h2 {
+.authors-list-items-li h2 {
   font-size: var(--font-medium);
   letter-spacing: 0.2rem;
 }
 
-.authors-list-items-li > img {
+.authors-list-items-li img {
   border-radius: 50%;
   width: 75px;
   height: 75px;
 }
 
-.authors-list-items-li > p {
+.authors-list-items-li p {
   font-size: 1.3rem;
 }
 
@@ -53,10 +54,10 @@
 }
 
 @media all and (max-width: 650px) {
-  .authors-list-items-li > h2 {
+  .authors-list-items-li h2 {
     font-size: 20px;
   }
-  .authors-list-items-li > img {
+  .authors-list-items-li img {
     width: 50px;
     height: 50px;
   }
@@ -66,14 +67,14 @@
   .authors-list-section {
     padding: 0;
   }
-  .authors-list-items-li > h2 {
+  .authors-list-items-li h2 {
     font-size: 15px;
   }
-  .authors-list-items-li > img {
+  .authors-list-items-li img {
     width: 35px;
     height: 35px;
   }
-  .authors-list-items-li > p {
+  .authors-list-items-li p {
     font-size: 1rem;
   }
 }

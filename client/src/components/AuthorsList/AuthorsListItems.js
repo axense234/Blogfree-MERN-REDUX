@@ -26,7 +26,7 @@ const AuthorsListItems = () => {
     }
   );
 
-  return <ul className='authors-list-items-container'>{renderedAuthors}</ul>;
+  return <div className='authors-list-items-container'>{renderedAuthors}</div>;
 };
 
 export default AuthorsListItems;
