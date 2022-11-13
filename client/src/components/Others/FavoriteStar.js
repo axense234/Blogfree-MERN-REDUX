@@ -16,10 +16,6 @@ const FavoriteStar = ({ id }) => {
   const jwt = useSelector(getJWT);
   // id from params is the id of the blog/author that needs to be favorited
 
-  if (!jwt) {
-    return null;
-  }
-
   const dispatch = useDispatch();
   const { id: profileId } = useSelector(getProfileSelector);
   const tempFavorites = useSelector(getTempFavorites);
@@ -51,6 +47,9 @@ const FavoriteStar = ({ id }) => {
       );
     }
   };
+  if (!jwt) {
+    return null;
+  }
   return (
     <div className='search-results-star'>
       {tempFavorites.find((favorite) => favorite === id) ? (
