@@ -20,9 +20,17 @@
   align-items: flex-start;
   justify-content: space-around;
   gap: 1rem;
+  width: 100%;
 }
 .blog-result-comp-info h2 {
   align-self: flex-end;
+}
+
+.blog-result-comp-info > p {
+  max-width: 100%;
+  white-space: normal;
+  height: max-content;
+  word-wrap: break-word;
 }
 
 .blog-result-comp-container > a {

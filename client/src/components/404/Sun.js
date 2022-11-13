@@ -5,7 +5,7 @@ import "../../styles/404/Sun.css";
 const Sun = () => {
   return (
     <img
-      src='https://res.cloudinary.com/birthdayreminder/image/upload/v1664784632/Sun.png_gqnorw.png'
+      src='https://res.cloudinary.com/birthdayreminder/image/upload/v1664784632/Blogfree/Sun.png_gqnorw.png'
       alt='Sun'
       className='sun-img'
     />

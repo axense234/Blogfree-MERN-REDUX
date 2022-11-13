@@ -7,6 +7,7 @@
   border-radius: 1rem;
   background-color: #f7c40a;
   max-width: 32%;
+  width: 32%;
   gap: 1rem;
   padding: 1rem;
   height: 100%;
@@ -19,6 +20,29 @@
   height: 350px;
 }
 
+.profile-details-image {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.profile-details-image > input::-webkit-file-upload-button {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  top: 0;
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+}
+
+.profile-details-image > input {
+  color: transparent;
+  user-select: none;
+}
+
 .profile-details-text {
   display: flex;
   flex-direction: column;
@@ -29,7 +53,8 @@
   list-style: none;
 }
 
-.profile-details-text > li > span {
+.profile-details-text > li > span,
+.profile-details-text > li > label {
   border-radius: 0.2rem;
   padding: 0.3rem;
   background-color: #043b13;
@@ -37,9 +62,17 @@
   color: white;
 }
 
-.profile-details-text h3 {
+.profile-details-text h3,
+.profile-details-text > input:first-of-type {
   align-self: center;
   font-size: 24px;
+  text-align: center;
+}
+
+.profile-details-text > input:first-of-type {
+  border: 2px solid var(--second-green);
+  background-color: inherit;
+  border-radius: 1rem;
 }
 
 .profile-details-text > li {
@@ -57,6 +90,20 @@
 
 .profile-details-text > li > p {
   font-size: 1.2rem;
+}
+
+.profile-details-text > li > input,
+.profile-details-text > li > select {
+  border: 2px solid var(--second-green);
+  background-color: inherit;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+}
+
+.profile-details-text > li > select option {
+  background-color: #07982f;
+  color: white;
+  border-radius: 1rem;
 }
 
 .profile-details > button {

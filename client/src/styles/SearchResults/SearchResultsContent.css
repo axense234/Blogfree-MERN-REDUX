@@ -16,12 +16,19 @@
 
 .search-results-temp-content-container {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   padding: 4rem;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
+}
+
+.no-blogs-authors {
+  align-self: flex-start;
+  color: white;
+  font-size: 96px;
+  margin-top: 7.5rem;
 }
 
 @media all and (max-width: 1375px) {

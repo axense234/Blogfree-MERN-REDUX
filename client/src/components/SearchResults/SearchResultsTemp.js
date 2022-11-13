@@ -5,11 +5,11 @@ import SearchResultsContent from "./SearchResultsContent";
 // CSS
 import "../../styles/SearchResults/SearchResultsTemp.css";
 
-const SearchResultsTemp = () => {
+const SearchResultsTemp = ({ query }) => {
   return (
     <div className='search-results-temp'>
       <GreenLine />
-      <SearchResultsContent />
+      <SearchResultsContent query={query} />
       <GreenLine />
     </div>
   );

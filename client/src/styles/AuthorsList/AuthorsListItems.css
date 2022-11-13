@@ -17,6 +17,7 @@
   width: 40%;
   gap: 0.5rem;
   text-decoration: none;
+  text-align: center;
 }
 
 .authors-list-items-li h2 {

@@ -5,29 +5,29 @@ import AuthorProfileButtonsComp from "./ProfileButtonsComp";
 import "../../styles/Profile/AuthorProfileComp.css";
 
 const AuthorProfileComp = ({
-  authorImg,
-  authorUsername,
-  authorProfileDesc,
-  authorJob,
+  imgUrl,
+  username,
+  description,
+  job,
   id,
   type,
 }) => {
   return (
     <article className='author-profile-comp-container'>
       <div className='author-profile-comp-buttons'>
-        <img src={authorImg} alt={authorUsername} />
+        <img src={imgUrl} alt={username} />
         <AuthorProfileButtonsComp
-          favorite={id === 1 ? true : false}
+          favorite={true}
           id={id}
           profileComponentType='Author'
           profilePageType={type}
         />
       </div>
       <div className='author-profile-comp-info'>
-        <h1>{authorUsername}</h1>
-        <p>{authorJob}</p>
+        <h1>{username}</h1>
+        <p>{job}</p>
       </div>
-      <p>{authorProfileDesc.slice(130)}...</p>
+      <p>{description.slice(130)}...</p>
     </article>
   );
 };

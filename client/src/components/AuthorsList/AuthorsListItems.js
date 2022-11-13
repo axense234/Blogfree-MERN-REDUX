@@ -1,15 +1,18 @@
 import React from "react";
-// Data
-import { TemplateAuthors } from "../../data";
 // CSS
 import "../../styles/AuthorsList/AuthorsListItems.css";
 // React Router
 import { Link } from "react-router-dom";
+// Redux
+import { useSelector } from "react-redux";
+import { getAllAuthorsSelector } from "../../redux/slices/authorsSlice";
 
 const AuthorsListItems = () => {
-  const renderedAuthors = TemplateAuthors.map(
-    ({ authorUsername, authorImg, id, authorSelectedCategories }, index) => {
-      const categories = Object.values(authorSelectedCategories);
+  // Redux
+  const authors = useSelector(getAllAuthorsSelector);
+
+  const renderedAuthors = authors.map(
+    ({ username, imgUrl, id, selectedCategory }, index) => {
       return (
         <Link
           key={id}
@@ -17,10 +20,10 @@ const AuthorsListItems = () => {
           to={`/authors/view-author/${id}`}
         >
           <h2>
-            {index + 1}.{authorUsername}
+            {index + 1}.{username}
           </h2>
-          <img src={authorImg} alt={authorUsername} />
-          <p>({categories})</p>
+          <img src={imgUrl} alt={username} />
+          <p>({selectedCategory})</p>
         </Link>
       );
     }

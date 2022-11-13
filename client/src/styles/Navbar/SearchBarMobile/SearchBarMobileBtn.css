@@ -1,0 +1,15 @@
+.sbm-btn {
+  background-color: inherit;
+  font-size: 40px;
+  display: none;
+  z-index: 4;
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+@media all and (max-width: 1150px) {
+  .sbm-btn {
+    display: inline;
+    color: #f7c40a;
+  }
+}

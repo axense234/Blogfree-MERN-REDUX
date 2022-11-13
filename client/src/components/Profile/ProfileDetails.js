@@ -1,80 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 // CSS
 import "../../styles/Profile/ProfileDetails.css";
-// Data
-import { TemplateAuthors } from "../../data";
-// React Router
-import { useParams } from "react-router-dom";
 // Components
 import FavoriteStar from "../Others/FavoriteStar";
+import ProfileDetailsInfo from "./ProfileDetailsInfo";
+// Redux
+import { useSelector } from "react-redux";
+import { getAuthorByIdSelector } from "../../redux/slices/authorsSlice";
+// React Router
+import { useParams } from "react-router-dom";
 
 const ProfileDetails = ({ type }) => {
-  let specificAuthor = TemplateAuthors.find((author) => author.id === 3);
-  const { authorId } = useParams();
+  // PROFILE PART
+  if (type !== "Author") {
+    return <ProfileDetailsInfo />;
+  } else {
+    // AUTHOR PART
+    const { authorId } = useParams();
 
-  if (!specificAuthor) {
-    throw new Error("wtf bruh");
-  }
+    const profile = useSelector((state) =>
+      getAuthorByIdSelector(state, authorId)
+    );
 
-  if (type === "Author") {
-    specificAuthor = TemplateAuthors.find(
-      (author) => author.id === Number(authorId)
+    return (
+      <div className='profile-details'>
+        <FavoriteStar id={profile?.id} />
+        <img src={profile?.imgUrl} alt='Default Profile' />
+        <ul className='profile-details-text'>
+          <h3>{profile?.username}</h3>
+          <li>
+            <span>Age:</span>
+            <p>{profile?.age}</p>
+          </li>
+          <li>
+            <span>Job:</span>
+            <p>{profile?.job}</p>
+          </li>
+          <li>
+            <span>Blogs Made:</span>
+            <p>{profile?.blogsCount}</p>
+          </li>
+          <li>
+            <span>Stars Count:</span>
+            <p>{profile?.blogsCount}</p>
+          </li>
+          <li>
+            <span>Description:</span>
+            <p>{profile?.description.slice(0, 400)}...</p>
+          </li>
+          <li>
+            <span>Selected Category:</span>
+            <p>{profile?.selectedCategory}</p>
+          </li>
+        </ul>
+        {type !== "Author" && <button>Edit</button>}
+      </div>
     );
   }
-
-  const {
-    authorUsername,
-    authorAge,
-    authorJob,
-    authorBlogsCount,
-    authorProfileDesc,
-    authorImg,
-    authorSelectedCategories,
-  } = specificAuthor;
-
-  const categories = Object.values(authorSelectedCategories);
-
-  return (
-    <div className='profile-details'>
-      <FavoriteStar />
-      {authorImg ? (
-        <img src={authorImg} alt='Default Profile' />
-      ) : (
-        <img
-          src='https://res.cloudinary.com/birthdayreminder/image/upload/v1664019172/115-1150152_default-profile-picture-avatar-png-green_1.png_nuwc0t.png'
-          alt='Default Profile'
-        />
-      )}
-      <ul className='profile-details-text'>
-        <h3>{authorUsername}</h3>
-        <li>
-          <span>Age:</span>
-          <p>{authorAge}</p>
-        </li>
-        <li>
-          <span>Job:</span>
-          <p>{authorJob}</p>
-        </li>
-        <li>
-          <span>Blogs Made:</span>
-          <p>{authorBlogsCount}</p>
-        </li>
-        <li>
-          <span>Stars Count:</span>
-          <p>{authorBlogsCount}</p>
-        </li>
-        <li>
-          <span>Description:</span>
-          <p>{authorProfileDesc.slice(0, 400)}...</p>
-        </li>
-        <li>
-          <span>Selected Categories:</span>
-          <p>{categories}</p>
-        </li>
-      </ul>
-      {type !== "Author" && <button>Edit</button>}
-    </div>
-  );
 };
 
 export default ProfileDetails;

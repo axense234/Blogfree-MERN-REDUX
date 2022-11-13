@@ -1,0 +1,18 @@
+.sbm-results {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  overflow-y: scroll;
+  margin-bottom: auto;
+}
+
+.sbm-results > li {
+  background-color: var(--second-green);
+  padding: 0.5rem;
+  width: 100%;
+  color: white;
+  padding-left: 1rem;
+}

@@ -4,17 +4,37 @@ import "../../styles/Others/BlogPreview.css";
 // Components
 import Reactions from "../Others/Reactions";
 // Hooks
-import useFindReactionsAndCategory from "../../hooks/useFindReactionsAndCategory";
+import useFindReactions from "../../hooks/useFindReactions";
+// Data
+import { TemplateCreateBlogPreview } from "../../data";
+// Redux
+import { useSelector } from "react-redux";
+import {
+  getBlogSettingsSelector,
+  getProfileSelector,
+} from "../../redux/slices/generalSlice";
+import { getBlogById } from "../../redux/slices/blogsSlice";
 
-const BlogPreview = ({
-  blogReactions,
-  blogTitle,
-  blogCategory,
-  blogAuthor,
-  blogDesc,
-}) => {
-  const { specificBlogReactions, specificBlogCategory } =
-    useFindReactionsAndCategory(blogReactions, blogCategory);
+const BlogPreview = ({ id }) => {
+  // EDIT MODE
+  const blog = useSelector((state) => getBlogById(state, id));
+  const blogDetails = useSelector(getBlogSettingsSelector);
+
+  const { reactions } = blog || TemplateCreateBlogPreview;
+  console.log(reactions);
+
+  const clickable = false;
+  const { specificBlogReactions } = useFindReactions(
+    reactions,
+    "",
+    "",
+    "",
+    clickable
+  );
+
+  const { username } = useSelector(getProfileSelector);
+  const defBlogDesc =
+    "This will be your blog content.Be careful what you type here!";
 
   return (
     <section className='blog-preview-container'>
@@ -22,11 +42,11 @@ const BlogPreview = ({
       <div className='blog-preview-info'>
         <Reactions reactions={specificBlogReactions} />
         <h2>
-          {blogTitle}
-          {specificBlogCategory}
+          {blogDetails.title || "Blog Title"}
+          {blogDetails.category}
         </h2>
-        <p>...by {blogAuthor}</p>
-        <p>{blogDesc.slice(0, 1000)}...</p>
+        <p>...by {username || "You"}</p>
+        <p>{blogDetails.description.slice(0, 1000) || defBlogDesc}...</p>
       </div>
     </section>
   );

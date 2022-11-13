@@ -1,52 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Components
 import GreenLine from "../components/Others/GreenLine";
 import Reactions from "../components/Others/Reactions";
 import FavoriteStar from "../components/Others/FavoriteStar";
+import Loading from "../components/Others/Loading";
 // React Router
-import { useParams, Link } from "react-router-dom";
-// Data
-import { TemplateBlogs, TemplateAuthors } from "../data";
+import { Link, useParams } from "react-router-dom";
 // Hooks
-import useFindReactionsAndCategory from "../hooks/useFindReactionsAndCategory";
+import useFindReactions from "../hooks/useFindReactions";
 // CSS
 import "../styles/ViewBlog/ViewBlog.css";
+import "../styles/Others/Loading.css";
+// Redux
+import { useSelector, useDispatch } from "react-redux";
+import { getSingleBlogStatus, getSingleBlog } from "../redux/slices/blogsSlice";
+import { getAuthor, getAuthorByIdSelector } from "../redux/slices/authorsSlice";
+import { getBlogById } from "../redux/slices/blogsSlice";
+import { getAuthorStatusSelector } from "../redux/slices/authorsSlice";
+import {
+  getJWT,
+  getProfile,
+  getProfileStatus,
+} from "../redux/slices/generalSlice";
 
 const ViewBlog = () => {
   const { blogId } = useParams();
-
-  const specificBlog = TemplateBlogs.find((blog) => blog.id === Number(blogId));
-
-  const author = TemplateAuthors.find(
-    (author) => author.authorUsername === specificBlog.blogAuthor
+  const jwt = useSelector(getJWT);
+  const dispatch = useDispatch();
+  const [tempReactions, setTempReactions] = useState([]);
+  const loadingBlog = useSelector((state) => getSingleBlogStatus(state));
+  const loadingAuthorName = useSelector((state) =>
+    getAuthorStatusSelector(state)
   );
+  const loadingProfileState = useSelector(getProfileStatus);
 
-  if (!specificBlog) {
-    throw new Error("No blog found with the id in the params.");
+  console.count("render");
+
+  const blog = useSelector((state) => getBlogById(state, blogId));
+  const { username } =
+    useSelector((state) => getAuthorByIdSelector(state, blog?.author)) ||
+    "Default Username";
+
+  useEffect(() => {
+    dispatch(getProfile(jwt));
+  }, []);
+
+  useEffect(() => {
+    if (loadingBlog === "idle") {
+      dispatch(getSingleBlog(blogId));
+    }
+  }, [loadingBlog]);
+
+  useEffect(() => {
+    if (blog) {
+      dispatch(getAuthor(blog.author));
+    }
+  }, [blog]);
+
+  useEffect(() => {
+    if (blog) {
+      const { specificBlogReactions } = useFindReactions(
+        blog.reactions,
+        blogId,
+        dispatch,
+        jwt
+      );
+      setTempReactions(specificBlogReactions);
+      console.log("getting the reactions");
+    }
+  }, [blog?.reactions]);
+
+  if (
+    loadingBlog === "pending" ||
+    loadingBlog === "idle" ||
+    loadingProfileState === "pending" ||
+    loadingProfileState === "idle"
+  ) {
+    return (
+      <main className='view-blog-section'>
+        <div className='view-blog-content'>
+          <GreenLine />
+          <Loading type='loading full-blog' size={35} />
+          <GreenLine />
+        </div>
+      </main>
+    );
   }
-
-  const { blogReactions, blogTitle, blogCategory, blogAuthor, blogDesc } =
-    specificBlog;
-
-  const { specificBlogReactions, specificBlogCategory } =
-    useFindReactionsAndCategory(blogReactions, blogCategory);
+  const { title, category, author, description, id } = blog;
 
   return (
     <main className='view-blog-section'>
       <div className='view-blog-content'>
-        <FavoriteStar />
+        <FavoriteStar id={id} />
         <GreenLine />
         <div className='view-blog-info'>
-          <Reactions reactions={specificBlogReactions} />
+          <Reactions reactions={tempReactions} id={id} />
           <h1>
-            {blogTitle}
-            {specificBlogCategory}
+            {title}
+            {category}
           </h1>
           <p>
             ...by{" "}
-            <Link to={`/authors/view-author/${author.id}`}>{blogAuthor}</Link>
+            <Link to={`/authors/view-author/${author}`}>
+              {loadingAuthorName === "pending" || loadingAuthorName === "idle"
+                ? "Loading..."
+                : username}
+            </Link>
           </p>
-          <p>{blogDesc}</p>
+          <p>{description}</p>
         </div>
         <GreenLine />
       </div>

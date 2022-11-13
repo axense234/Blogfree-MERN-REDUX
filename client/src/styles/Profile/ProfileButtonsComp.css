@@ -7,7 +7,8 @@
 }
 
 .blog-profile-comp-buttons > a,
-.blog-profile-comp-buttons > svg {
+.blog-profile-comp-buttons > svg,
+.blog-profile-comp-buttons .search-results-star > svg {
   font-size: 1.6rem;
   transition: transform 0.25s;
   text-decoration: none;
@@ -16,12 +17,13 @@
 }
 
 .blog-profile-comp-buttons > a:hover,
-.blog-profile-comp-buttons > svg:hover {
+.blog-profile-comp-buttons > svg:hover,
+.blog-profile-comp-buttons .search-results-star > svg {
   transform: scale(1.3);
 }
 
-.star-fill-blog-icon,
-.star-outline-blog-icon {
+.blog-profile-comp-buttons .star-fill-blog-icon,
+.blog-profile-comp-buttons .star-outline-blog-icon {
   color: yellow;
 }
 

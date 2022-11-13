@@ -7,7 +7,7 @@
   transition: all 0.25s;
 }
 
-*:focus {
+*:focus-visible {
   outline: 3.5px solid cyan;
 }
 /* Vars */

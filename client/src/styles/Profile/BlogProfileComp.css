@@ -28,6 +28,13 @@
   font-size: 1.75rem;
 }
 
+.blog-profile-comp-info > p {
+  max-width: 100%;
+  white-space: normal;
+  height: max-content;
+  word-wrap: break-word;
+}
+
 .blog-profile-comp-info h2 {
   align-self: flex-end;
   margin-bottom: 1rem;

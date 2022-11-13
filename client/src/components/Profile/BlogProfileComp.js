@@ -1,30 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // CSS
 import "../../styles/Profile/BlogProfileComp.css";
 // Hooks
-import useFindReactionsAndCategory from "../../hooks/useFindReactionsAndCategory";
+import useFindReactions from "../../hooks/useFindReactions";
 // Components
 import Reactions from "../Others/Reactions";
 import BlogProfileButtonsComp from "./ProfileButtonsComp";
+// Redux
+import { useSelector } from "react-redux";
+import { getAuthorByIdSelector } from "../../redux/slices/authorsSlice";
+import { getBlogById } from "../../redux/slices/blogsSlice";
 
-const BlogProfileComp = ({
-  blogReactions,
-  blogTitle,
-  blogCategory,
-  blogAuthor,
-  blogDesc,
-  id,
-  type,
-}) => {
-  const { specificBlogReactions, specificBlogCategory } =
-    useFindReactionsAndCategory(blogReactions, blogCategory);
+const BlogProfileComp = ({ id, type, dispatch, jwt }) => {
+  const blog = useSelector((state) => getBlogById(state, id));
+  const { reactions, title, description, author, category } = blog;
+  const [tempReactions, setTempReactions] = useState([]);
+  useEffect(() => {
+    const { specificBlogReactions } = useFindReactions(
+      reactions,
+      id,
+      dispatch,
+      jwt
+    );
+    setTempReactions(specificBlogReactions);
+  }, [reactions, id, jwt]);
+
+  const { username } =
+    useSelector((state) => getAuthorByIdSelector(state, author)) ||
+    "Default Username";
 
   return (
     <article className='blog-profile-comp-container'>
       <div className='blog-profile-comp-buttons-container'>
-        <Reactions reactions={specificBlogReactions} />
+        <Reactions reactions={tempReactions} />
         <BlogProfileButtonsComp
-          favorite={id === 4 ? true : false}
           id={id}
           profileComponentType='Blog'
           profilePageType={type}
@@ -32,11 +41,11 @@ const BlogProfileComp = ({
       </div>
       <div className='blog-profile-comp-info'>
         <h1>
-          {blogTitle}
-          {specificBlogCategory}
+          {title}
+          {category}
         </h1>
-        <h2>...by {blogAuthor}</h2>
-        <p>{blogDesc.slice(0, 200)}...</p>
+        <h2>...by {username || "Username"}</h2>
+        <p>{description.slice(0, 200)}...</p>
       </div>
     </article>
   );

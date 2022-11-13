@@ -1,0 +1,33 @@
+.no-profile-items,
+.no-author-items {
+  padding: 1.5rem;
+}
+
+.no-profile-items > h2,
+.no-author-items > h2 {
+  font-size: 36px;
+  text-align: center;
+  color: white;
+}
+
+.npi-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.npi-options > a {
+  border: none;
+  background-color: var(--main-green);
+  width: 25%;
+  margin-top: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 1rem 0rem;
+  color: white;
+  transition: transform 0.25s;
+  z-index: 2;
+}

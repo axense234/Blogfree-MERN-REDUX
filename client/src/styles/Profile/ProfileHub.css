@@ -29,7 +29,8 @@
 
 .profile-hub-choices button,
 .profile-hub-input button,
-.profile-hub-choices > a {
+.profile-hub-choices > a,
+.profile-hub-input select {
   border: none;
   text-align: center;
   text-decoration: none;
@@ -44,8 +45,23 @@
   font-size: 0.9rem;
 }
 
+.profile-hub-input select {
+  border: 2px solid var(--second-green);
+  background-color: var(--second-green);
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  transition: transform 0.25s;
+  width: max-content;
+}
+
 .profile-hub-choices button:hover,
-.profile-hub-input button:hover {
+.profile-hub-input button:hover,
+.profile-hub-choices > a:hover,
+.profile-hub-input select:hover {
   transform: scale(1.1);
 }
 
@@ -92,6 +108,7 @@
   flex-direction: column;
   gap: 1rem;
   padding-bottom: 1.5rem;
+  min-height: 35rem;
 }
 
 @media all and (max-width: 1700px) {

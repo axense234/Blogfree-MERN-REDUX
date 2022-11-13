@@ -5,11 +5,14 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import MenuNav from "../Navbar/MenuNav";
+import SearchBarMobile from "../Navbar/SearchBarMobile/SearchBarMobile";
 
 const SharedLayout = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showSearchBarMobile, setShowSearchBarMobile] = useState(false);
   const menuNavRef = useRef(null);
   const menuButtonRef = useRef(null);
+  const sbmRef = useRef(null);
   // Menu transition based on showMenu
   useEffect(() => {
     let timeout;
@@ -26,16 +29,29 @@ const SharedLayout = () => {
         menuNavRef.current.style.display = "none";
       }, 300);
     }
+    if (showSearchBarMobile) {
+      sbmRef.current.style.display = "flex";
+      timeout = setTimeout(() => {
+        sbmRef.current.style.height = "100vh";
+      });
+      console.log("hello mna");
+    } else {
+      sbmRef.current.style.height = "1px";
+      timeout = setTimeout(() => {
+        sbmRef.current.style.display = "none";
+      }, 300);
+    }
     return () => clearTimeout(timeout);
-  }, [showMenu]);
+  }, [showMenu, showSearchBarMobile]);
 
   // Close Menu once client resizes window
   useEffect(() => {
     window.addEventListener("resize", () => {
-      console.log("did it");
       if (window.innerWidth >= 1150 && showMenu) {
-        console.log("set it to false");
         setShowMenu(false);
+      }
+      if (window.innerWidth >= 1150 && showSearchBarMobile) {
+        setShowSearchBarMobile(false);
       }
     });
     return () => {
@@ -47,9 +63,11 @@ const SharedLayout = () => {
     <>
       <Navbar
         setShowMenu={setShowMenu}
+        setShowSbm={setShowSearchBarMobile}
         showMenu={showMenu}
         menuButtonRef={menuButtonRef}
       />
+      <SearchBarMobile setShow={setShowSearchBarMobile} sbmRef={sbmRef} />
       <MenuNav menuRef={menuNavRef} setShowMenu={setShowMenu} />
       <>
         <Outlet />

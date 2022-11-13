@@ -1,0 +1,14 @@
+.profile-image-overlay {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: brightness(1);
+  border: 3px solid black;
+  z-index: 4;
+  top: 1rem;
+  display: grid;
+  place-items: center;
+  font-size: 15rem;
+}

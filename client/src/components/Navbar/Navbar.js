@@ -7,13 +7,15 @@ import MenuButton from "./MenuButton";
 
 // CSS
 import "../../styles/Navbar/Navbar.css";
+import SearchBarMobileBtn from "./SearchBarMobile/SearchBarMobileBtn";
 
-const Navbar = ({ setShowMenu, showMenu, menuButtonRef }) => {
+const Navbar = ({ setShowMenu, setShowSbm, showMenu, menuButtonRef }) => {
   return (
     <nav className='navbar-container'>
       <Logo />
       <Searchbar />
       <NavLinks />
+      <SearchBarMobileBtn setShow={setShowSbm} />
       <MenuButton
         setShowMenu={setShowMenu}
         showMenu={showMenu}

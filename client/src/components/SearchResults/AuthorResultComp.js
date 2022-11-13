@@ -5,20 +5,22 @@ import { Link } from "react-router-dom";
 import "../../styles/SearchResults/AuthorResultComp.css";
 // Components
 import FavoriteStar from "../Others/FavoriteStar";
+// Redux
+import { useSelector } from "react-redux";
+import { getAuthorByIdSelector } from "../../redux/slices/authorsSlice";
 
-const AuthorResultComp = ({
-  authorImg,
-  authorUsername,
-  authorProfileDesc,
-  id,
-}) => {
+const AuthorResultComp = ({ authorId }) => {
+  const { imgUrl, username, description, id } = useSelector((state) =>
+    getAuthorByIdSelector(state, authorId)
+  );
+
   return (
     <article className='author-result-comp-container'>
       <FavoriteStar id={id} />
-      <img src={authorImg} alt={authorUsername} />
+      <img src={imgUrl} alt={username} />
       <div className='author-result-comp-info'>
-        <h1>{authorUsername}</h1>
-        <p>{authorProfileDesc.slice(0, 150)}...</p>
+        <h1>{username}</h1>
+        <p>{description.slice(0, 150)}...</p>
       </div>
       <Link
         to={`/authors/view-author/${id}`}

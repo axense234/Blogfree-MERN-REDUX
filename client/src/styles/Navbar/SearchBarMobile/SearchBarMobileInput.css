@@ -1,0 +1,38 @@
+.search-bar-mobile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 60%;
+  padding: 1.5rem 0;
+  margin-bottom: auto;
+  margin-right: 1rem;
+}
+
+#sbm-goback {
+  border: none;
+  background-color: inherit;
+  font-size: 2rem;
+}
+
+.sbm-form {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.sbm-form > input {
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 2px solid var(--main-green);
+}
+
+#sbm-clear {
+  background-color: var(--second-green);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+}
