@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // CSS
 import "../../styles/Profile/ProfileDetails.css";
 // Components
@@ -11,17 +11,15 @@ import { getAuthorByIdSelector } from "../../redux/slices/authorsSlice";
 import { useParams } from "react-router-dom";
 
 const ProfileDetails = ({ type }) => {
+  const { authorId } = useParams();
+  const profile = useSelector((state) =>
+    getAuthorByIdSelector(state, authorId)
+  );
   // PROFILE PART
   if (type !== "Author") {
     return <ProfileDetailsInfo />;
   } else {
     // AUTHOR PART
-    const { authorId } = useParams();
-
-    const profile = useSelector((state) =>
-      getAuthorByIdSelector(state, authorId)
-    );
-
     return (
       <div className='profile-details'>
         <FavoriteStar id={profile?.id} />

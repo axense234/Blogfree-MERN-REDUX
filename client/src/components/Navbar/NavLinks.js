@@ -30,12 +30,14 @@ const NavLinks = () => {
       return null;
     } else if (link.linkDest === pathname) {
       return null;
-    } else if(link.linkName !== "Logout"){
+    } else if (link.linkName !== "Logout") {
       return (
         <Link to={link.linkDest} key={link.id}>
           {link.linkName}
         </Link>
       );
+    } else {
+      return null;
     }
   });
 

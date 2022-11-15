@@ -1,5 +1,5 @@
-const Author = require("../models/Author");
 const { StatusCodes } = require("http-status-codes");
+const Author = require("../models/Author");
 
 const getAuthor = async (req, res) => {
   const { authorId } = req.params;
@@ -29,9 +29,7 @@ const getAllAuthors = async (req, res) => {
     });
   }
   if (searchQuery) {
-    AuthorsFound = AuthorsFound.filter((author) => {
-      return author.username.to;
-    });
+    AuthorsFound = AuthorsFound.filter((author) => author.username.to);
   }
   return res
     .status(StatusCodes.OK)
@@ -42,8 +40,6 @@ const updateAuthor = async (req, res) => {
   const { authorId } = req.params;
   const { id } = req.user;
   const { ...newAuthor } = req.body;
-
-  console.log(newAuthor);
 
   const AuthorFoundAndUpdated = await Author.findByIdAndUpdate(
     authorId || id,
@@ -63,7 +59,6 @@ const updateAuthor = async (req, res) => {
 
 const createAuthor = async (req, res) => {
   const { ...newAuthor } = req.body;
-  console.log(newAuthor);
 
   const CreatedAuthor = await Author.create(newAuthor);
 
@@ -74,7 +69,6 @@ const createAuthor = async (req, res) => {
   }
 
   const token = CreatedAuthor.createJWT();
-  console.log("created author in controller");
 
   return res.status(StatusCodes.CREATED).json({
     token,
@@ -97,7 +91,6 @@ const deleteAuthor = async (req, res) => {
 };
 
 const loginAuthor = async (req, res) => {
-  console.log(req.body);
   const { username, email, password } = req.body;
   if (!username) {
     return res
@@ -143,7 +136,6 @@ const getProfile = async (req, res) => {
   const { id } = req.user;
 
   const AuthorFound = await Author.findById(id);
-  console.log("get profile backend");
   if (!AuthorFound) {
     return res
       .status(StatusCodes.NOT_FOUND)

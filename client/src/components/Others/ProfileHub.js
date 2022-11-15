@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 // CSS
 import "../../styles/Profile/ProfileHub.css";
 // Components
@@ -25,36 +25,40 @@ import {
   updatePhInput,
 } from "../../redux/slices/generalSlice";
 import useFilterItems from "../../hooks/useFilterItems";
+import { useMemo } from "react";
 
 const ProfileHub = ({ type }) => {
+  // Selectors
+  const dispatch = useDispatch();
   const jwt = useSelector(getJWT);
-  // PROFILE PART
-  if (type !== "Author") {
-    const { favorites } = useSelector(getProfileSelector);
-    const filters = useSelector(getPHFilters);
-    const query = useSelector(getPhInput);
-
-    const renderedAuthors = useSelector(getAllAuthorsSelector).filter(
-      (author) => {
-        return favorites.find((fav) => fav === author.id);
-      }
+  const { authorId } = useParams();
+  const filters = useSelector(getPHFilters);
+  const query = useSelector(getPhInput);
+  // Favorites
+  const profile = useSelector(getProfileSelector);
+  const author = useSelector((state) => getAuthorByIdSelector(state, authorId));
+  const favorites = profile?.favorites || author?.favorites;
+  // Authors
+  const renderedAuthors = useSelector(getAllAuthorsSelector).filter(
+    (author) => {
+      return favorites.find((fav) => fav === author.id);
+    }
+  );
+  // Profile Blogs
+  const profileBlogs = useSelector(getAllBlogsSelector).filter((profBlog) => {
+    return profBlog.author === (profile?.id || authorId);
+  });
+  // Favorite Blogs
+  const favoriteBlogs = useSelector(getAllBlogsSelector).filter((profBlog) => {
+    return favorites.find(
+      (fav) =>
+        fav === profBlog.id && profBlog.author !== (profile?.id || authorId)
     );
-    const { id } = useSelector(getProfileSelector);
-    const dispatch = useDispatch();
-
-    // BLOGS
-    const profileBlogs = useSelector(getAllBlogsSelector).filter((profBlog) => {
-      return profBlog.author === id;
-    });
-    const favoriteBlogs = useSelector(getAllBlogsSelector).filter(
-      (profBlog) => {
-        return favorites.find(
-          (fav) => fav === profBlog.id && profBlog.author !== id
-        );
-      }
-    );
-    const allRenderedBlogs = profileBlogs.concat(favoriteBlogs);
-    const renderedItems =
+  });
+  // All Rendered Blogs
+  const allRenderedBlogs = profileBlogs.concat(favoriteBlogs);
+  const renderedItems = useMemo(
+    () =>
       allRenderedBlogs
         .map((blog) => {
           return (
@@ -74,12 +78,19 @@ const ProfileHub = ({ type }) => {
               <AuthorProfileComp key={author.id} {...author} type={type} />
             );
           })
-        ) || [];
+        ) || [],
+    [allRenderedBlogs, renderedAuthors, dispatch, jwt, type]
+  );
 
-    const [items, setItems] = useState(renderedItems || []);
-    const [tempSelectedCategory, setTempSelectedCategory] = useState("");
-    const [tempQuery, setTempQuery] = useState(query);
+  // Temporary states/Current items
+  const [tempSelectedCategory, setTempSelectedCategory] = useState("");
+  const [tempQuery, setTempQuery] = useState(query);
 
+  // Filtering items every time favorites/filters change
+  const { itemsTemp } = useFilterItems(renderedItems, favorites, filters);
+
+  // PROFILE PART
+  if (type !== "Author") {
     const onChangeInput = (value) => {
       setTempQuery(value);
     };
@@ -89,10 +100,6 @@ const ProfileHub = ({ type }) => {
       dispatch(updatePhInput(tempQuery));
     };
 
-    useEffect(() => {
-      const { itemsTemp } = useFilterItems(renderedItems, favorites, filters);
-      setItems(itemsTemp);
-    }, [favorites, filters]);
     return (
       <div className='profile-hub'>
         <nav className='profile-hub-buttons'>
@@ -153,67 +160,16 @@ const ProfileHub = ({ type }) => {
           </form>
         </nav>
         <section className='profile-hub-content'>
-          {items.length === 0 ? <NoProfileHubItems type={type} /> : items}
+          {itemsTemp.length === 0 ? (
+            <NoProfileHubItems type={type} />
+          ) : (
+            itemsTemp
+          )}
         </section>
       </div>
     );
   } else {
     // AUTHOR PART
-    const { authorId } = useParams();
-    const { favorites } = useSelector((state) =>
-      getAuthorByIdSelector(state, authorId)
-    );
-    const filters = useSelector(getPHFilters);
-    const renderedAuthors = useSelector(getAllAuthorsSelector).filter(
-      (author) => {
-        return favorites.find((fav) => fav === author.id);
-      }
-    );
-    const dispatch = useDispatch();
-    // BLOGS
-    const profileBlogs = useSelector(getAllBlogsSelector).filter((profBlog) => {
-      return profBlog.author === authorId;
-    });
-    const favoriteBlogs = useSelector(getAllBlogsSelector).filter(
-      (profBlog) => {
-        return favorites.find(
-          (fav) => fav === profBlog.id && profBlog.author !== authorId
-        );
-      }
-    );
-    const allRenderedBlogs = profileBlogs.concat(favoriteBlogs);
-
-    // RENDERING ACTUAL ITEMS
-    const renderedItems =
-      allRenderedBlogs
-        .map((blog) => {
-          return (
-            <BlogProfileComp
-              key={blog.id}
-              type={type}
-              id={blog.id}
-              {...blog}
-              dispatch={dispatch}
-              jwt={jwt}
-            />
-          );
-        })
-        .concat(
-          renderedAuthors.map((author) => {
-            return (
-              <AuthorProfileComp key={author.id} {...author} type={type} />
-            );
-          })
-        ) || [];
-
-    const [items, setItems] = useState(renderedItems || []);
-    const [tempSelectedCategory, setTempSelectedCategory] = useState("");
-
-    useEffect(() => {
-      const { itemsTemp } = useFilterItems(renderedItems, favorites, filters);
-      setItems(itemsTemp);
-    }, [favorites, filters]);
-
     return (
       <div className='profile-hub'>
         <nav className='profile-hub-buttons'>
@@ -265,7 +221,11 @@ const ProfileHub = ({ type }) => {
           </div>
         </nav>
         <section className='profile-hub-content'>
-          {items.length === 0 ? <NoProfileHubItems type={type} /> : items}
+          {itemsTemp.length === 0 ? (
+            <NoProfileHubItems type={type} />
+          ) : (
+            itemsTemp
+          )}
         </section>
       </div>
     );

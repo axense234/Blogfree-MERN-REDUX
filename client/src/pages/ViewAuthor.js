@@ -12,32 +12,21 @@ import {
   getAllAuthorsStatusSelector,
 } from "../redux/slices/authorsSlice";
 import { clearBlogs, getAllBlogs } from "../redux/slices/blogsSlice";
-import {
-  getJWT,
-  getProfile,
-  getProfileStatus,
-} from "../redux/slices/generalSlice";
+import { getJWT } from "../redux/slices/generalSlice";
 
 const ViewAuthor = () => {
   const jwt = useSelector(getJWT);
 
   const dispatch = useDispatch();
   const loadingAuthorsState = useSelector(getAllAuthorsStatusSelector);
-  const loadingProfileState = useSelector(getProfileStatus);
 
   useEffect(() => {
     dispatch(clearBlogs());
-    dispatch(getProfile(jwt));
     dispatch(getAllAuthors({ query: "", limit: 100 }));
     dispatch(getAllBlogs({ query: "", limit: 100 }));
-  }, []);
+  }, [dispatch, jwt]);
 
-  if (
-    loadingAuthorsState === "pending" ||
-    loadingAuthorsState === "idle" ||
-    loadingProfileState === "pending" ||
-    loadingProfileState === "idle"
-  ) {
+  if (loadingAuthorsState === "pending" || loadingAuthorsState === "idle") {
     return (
       <main className='view-author-section'>
         <div className='view-author-content'>

@@ -30,13 +30,13 @@ const EditBlog = () => {
     dispatch(getProfile(jwt));
     dispatch(clearBlogSettings());
     dispatch(getSingleBlog(blogId));
-  }, []);
+  }, [blogId, jwt, dispatch]);
 
   useEffect(() => {
     if (singleBlog?.id) {
       dispatch(updateBlogSettings({ load: singleBlog, mode: "multiple" }));
     }
-  }, [singleBlog]);
+  }, [singleBlog, dispatch]);
 
   return (
     <main className='edit-create-blog-section'>

@@ -23,7 +23,7 @@ const SearchResults = () => {
     dispatch(getAllBlogs({ query, limit: 75 }));
     dispatch(getAllAuthors({ query, limit: 75 }));
     dispatch(getProfile(jwt));
-  }, []);
+  }, [dispatch, jwt, query]);
 
   return (
     <main className='search-results-section'>

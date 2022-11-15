@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // CSS
 import "../../styles/Profile/BlogProfileComp.css";
 // Hooks
@@ -14,16 +14,14 @@ import { getBlogById } from "../../redux/slices/blogsSlice";
 const BlogProfileComp = ({ id, type, dispatch, jwt }) => {
   const blog = useSelector((state) => getBlogById(state, id));
   const { reactions, title, description, author, category } = blog;
-  const [tempReactions, setTempReactions] = useState([]);
-  useEffect(() => {
-    const { specificBlogReactions } = useFindReactions(
-      reactions,
-      id,
-      dispatch,
-      jwt
-    );
-    setTempReactions(specificBlogReactions);
-  }, [reactions, id, jwt]);
+  const clickable = jwt ? true : false;
+  const { specificBlogReactions } = useFindReactions(
+    reactions,
+    id,
+    dispatch,
+    jwt,
+    clickable
+  );
 
   const { username } =
     useSelector((state) => getAuthorByIdSelector(state, author)) ||
@@ -32,7 +30,7 @@ const BlogProfileComp = ({ id, type, dispatch, jwt }) => {
   return (
     <article className='blog-profile-comp-container'>
       <div className='blog-profile-comp-buttons-container'>
-        <Reactions reactions={tempReactions} />
+        <Reactions reactions={specificBlogReactions} />
         <BlogProfileButtonsComp
           id={id}
           profileComponentType='Blog'

@@ -16,7 +16,7 @@ const SearchBarMobile = ({ setShow, sbmRef }) => {
   useEffect(() => {
     dispatch(getAllBlogs({ query: input, limit: 10 }));
     dispatch(getAllAuthors({ query: input, limit: 10 }));
-  }, [input]);
+  }, [input, dispatch]);
 
   return (
     <section className='sbm' ref={sbmRef}>

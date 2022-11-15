@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 // Components
 import GreenLine from "../components/Others/GreenLine";
 import Reactions from "../components/Others/Reactions";
@@ -22,12 +22,12 @@ import {
   getProfile,
   getProfileStatus,
 } from "../redux/slices/generalSlice";
+import { TemplateCreateBlogPreview } from "../data";
 
 const ViewBlog = () => {
   const { blogId } = useParams();
   const jwt = useSelector(getJWT);
   const dispatch = useDispatch();
-  const [tempReactions, setTempReactions] = useState([]);
   const loadingBlog = useSelector((state) => getSingleBlogStatus(state));
   const loadingAuthorName = useSelector((state) =>
     getAuthorStatusSelector(state)
@@ -43,32 +43,26 @@ const ViewBlog = () => {
 
   useEffect(() => {
     dispatch(getProfile(jwt));
-  }, []);
+  }, [dispatch, jwt]);
 
   useEffect(() => {
     if (loadingBlog === "idle") {
       dispatch(getSingleBlog(blogId));
     }
-  }, [loadingBlog]);
+  }, [loadingBlog, blogId, dispatch]);
 
   useEffect(() => {
     if (blog) {
       dispatch(getAuthor(blog.author));
     }
-  }, [blog]);
+  }, [blog, dispatch]);
 
-  useEffect(() => {
-    if (blog) {
-      const { specificBlogReactions } = useFindReactions(
-        blog.reactions,
-        blogId,
-        dispatch,
-        jwt
-      );
-      setTempReactions(specificBlogReactions);
-      console.log("getting the reactions");
-    }
-  }, [blog?.reactions]);
+  const { specificBlogReactions } = useFindReactions(
+    blog?.reactions || TemplateCreateBlogPreview.reactions,
+    blogId,
+    dispatch,
+    jwt
+  );
 
   if (
     loadingBlog === "pending" ||
@@ -94,7 +88,7 @@ const ViewBlog = () => {
         <FavoriteStar id={id} />
         <GreenLine />
         <div className='view-blog-info'>
-          <Reactions reactions={tempReactions} id={id} />
+          <Reactions reactions={specificBlogReactions} id={id} />
           <h1>
             {title}
             {category}

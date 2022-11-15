@@ -1,6 +1,6 @@
 import React from "react";
 // React Icons
-import { AiFillStar, AiOutlineStar, AiFillEdit } from "react-icons/ai";
+import { AiFillEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { MdPreview } from "react-icons/md";
 // CSS

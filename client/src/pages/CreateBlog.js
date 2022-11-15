@@ -15,7 +15,7 @@ const EditBlog = () => {
   useEffect(() => {
     dispatch(getProfile(jwt));
     dispatch(clearBlogSettings());
-  }, []);
+  }, [dispatch, jwt]);
   return (
     <main className='edit-create-blog-section'>
       <div className='edit-create-blog-content'>

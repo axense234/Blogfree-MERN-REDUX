@@ -1,4 +1,5 @@
 const express = require("express");
+
 const app = express();
 // DOT Env
 require("dotenv").config();
@@ -6,6 +7,13 @@ require("dotenv").config();
 require("express-async-errors");
 
 const port = process.env.PORT || 4000;
+
+// Third Party Middleware
+const morgan = require("morgan");
+const cors = require("cors");
+const helmet = require("helmet");
+const xss = require("xss-clean");
+const rateLimiter = require("express-rate-limit");
 
 // DB Connection
 const connectDB = require("./db/connect");
@@ -15,11 +23,6 @@ const blogsRoute = require("./routers/blogs");
 const authorsRoute = require("./routers/authors");
 const testingRoute = require("./routers/testing");
 const ErrorHandlerMiddlware = require("./middleware/errorHandler");
-const morgan = require("morgan");
-const cors = require("cors");
-const helmet = require("helmet");
-const xss = require("xss-clean");
-const rateLimiter = require("express-rate-limit");
 
 // Express Middleware and Security
 app.use(express.urlencoded({ extended: true }));

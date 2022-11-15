@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
 import { BlogCategoryEmojies } from "../../data";
 import {
   changeMode,
-  getImageSecureUrl,
   getJWT,
   getMode,
   getProfileSelector,

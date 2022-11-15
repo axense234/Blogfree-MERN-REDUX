@@ -1,6 +1,6 @@
+const { StatusCodes } = require("http-status-codes");
 const Blog = require("../models/Blog");
 const Author = require("../models/Author");
-const { StatusCodes } = require("http-status-codes");
 const { TemplateAuthors, TemplateBlogs } = require("../data");
 
 const createTemplateAuthors = async (req, res) => {

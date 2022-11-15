@@ -16,7 +16,7 @@ const AuthorsList = () => {
   const loadingAuthorsState = useSelector(getAllAuthorsStatusSelector);
   useEffect(() => {
     dispatch(getAllAuthors({ query: "", limit: 100 }));
-  }, []);
+  }, [dispatch]);
   return (
     <main className='authors-list-section'>
       <div className='authors-list-content'>

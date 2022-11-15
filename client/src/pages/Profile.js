@@ -31,17 +31,20 @@ const Profile = () => {
   const loadingAuthorsState = useSelector(getAllAuthorsStatusSelector);
   const loadingProfileState = useSelector(getProfileStatus);
   const input = useSelector(getPhInput);
+
+  useEffect(() => {
+    if (jwt) {
+      dispatch(getProfile(jwt));
+      dispatch(clearBlogs());
+      dispatch(getAllAuthors({ query: input, limit: 100 }));
+      dispatch(getAllBlogs({ query: input, limit: 100 }));
+    }
+  }, [input, dispatch, jwt]);
+
   // Remove user's access from profile page if the user has no jwt token in localStorage
   if (!jwt) {
     return <NoProfile />;
   }
-
-  useEffect(() => {
-    dispatch(getProfile(jwt));
-    dispatch(clearBlogs());
-    dispatch(getAllAuthors({ query: input, limit: 100 }));
-    dispatch(getAllBlogs({ query: input, limit: 100 }));
-  }, [input]);
 
   if (
     loadingAuthorsState === "pending" ||

@@ -1,5 +1,5 @@
-const Blog = require("../models/Blog");
 const { StatusCodes } = require("http-status-codes");
+const Blog = require("../models/Blog");
 
 const getBlog = async (req, res) => {
   const { blogId } = req.params;
@@ -30,9 +30,7 @@ const getAllBlogs = async (req, res) => {
     });
   }
   if (searchQuery) {
-    foundBlogs = foundBlogs.filter((blog) => {
-      return blog.title.includes(searchQuery);
-    });
+    foundBlogs = foundBlogs.filter((blog) => blog.title.includes(searchQuery));
   }
   return res
     .status(StatusCodes.OK)
@@ -40,9 +38,7 @@ const getAllBlogs = async (req, res) => {
 };
 
 const createBlog = async (req, res) => {
-  console.log("got info");
   const { ...newBlog } = req.body;
-  console.log("created blog almost");
   const CreatedBlog = await Blog.create(newBlog);
   if (!CreatedBlog)
     return res

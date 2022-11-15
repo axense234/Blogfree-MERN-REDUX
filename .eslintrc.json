@@ -1,6 +1,19 @@
 {
-    "extends": ["airbnb","prettier","plugin:node/recommended"],
-    "plugins": ["prettier"],
-    "rules": {
-    }
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "off",
+    "arrow-body-style": "off",
+    // For es syntex like spread
+    "node/no-unsupported-features/es-syntax": [
+      "off",
+      {
+        "version": ">=8.0.0",
+        "ignores": []
+      }
+    ],
+    "no-underscore-dangle": "off",
+    "consistent-return": "off",
+    "func-names": "off"
+  }
 }

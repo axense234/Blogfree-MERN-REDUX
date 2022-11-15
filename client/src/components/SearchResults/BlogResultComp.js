@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 // React Router
 import { Link } from "react-router-dom";
 // CSS
@@ -23,30 +23,27 @@ const BlogResultComp = ({ blogId }) => {
     (state) => getBlogById(state, blogId)
   );
   const jwt = useSelector(getJWT);
-  const [tempReactions, setTempReactions] = useState([]);
-
   const blogAuthor = useSelector((state) =>
     getAuthorByIdSelector(state, author)
   );
 
-  useEffect(() => {
-    const { specificBlogReactions } = useFindReactions(
-      reactions,
-      id,
-      dispatch,
-      jwt
-    );
-    setTempReactions(specificBlogReactions);
-  }, [reactions]);
+  const { specificBlogReactions } = useFindReactions(
+    reactions,
+    id,
+    dispatch,
+    jwt
+  );
 
   useEffect(() => {
-    dispatch(getAuthor(author));
-  }, []);
+    if (!blogAuthor) {
+      dispatch(getAuthor(author));
+    }
+  }, [dispatch, author, blogAuthor]);
 
   return (
     <article className='blog-result-comp-container'>
       <FavoriteStar id={id} />
-      <Reactions reactions={tempReactions} />
+      <Reactions reactions={specificBlogReactions} />
       <div className='blog-result-comp-info'>
         <h1>
           {title}

@@ -57,7 +57,7 @@ const SharedLayout = () => {
     return () => {
       window.removeEventListener("resize", () => {});
     };
-  }, [showMenu]);
+  }, [showMenu, showSearchBarMobile]);
 
   return (
     <>
