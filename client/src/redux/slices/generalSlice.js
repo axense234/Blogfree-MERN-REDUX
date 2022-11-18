@@ -3,7 +3,9 @@ import axios from "axios";
 
 // NODE_ENV: development
 const BASE_URL =
-  process.env.NODE_ENV === "development" ? `http://localhost:4000` : "idk lol";
+  process.env.NODE_ENV === "development"
+    ? `http://localhost:4000`
+    : "https://blogfree-server-ca.onrender.com";
 
 export const getProfile = createAsyncThunk(
   "authors/getProfile",

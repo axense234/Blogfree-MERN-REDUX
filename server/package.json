@@ -21,6 +21,7 @@
     "xss-clean": "^0.1.1"
   },
   "scripts": {
-    "test": "nodemon index.js"
+    "test": "nodemon index.js",
+    "start": "node index.js"
   }
 }
