@@ -16,7 +16,7 @@ const AuthorsListItems = () => {
       return (
         <Link
           key={id}
-          className='authors-list-items-li'
+          className='hidden authors-list-items-li'
           to={`/authors/view-author/${id}`}
         >
           <h2>

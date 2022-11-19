@@ -5,7 +5,7 @@ import SearchResultsTemp from "../components/SearchResults/SearchResultsTemp";
 import "../styles/SearchResults/SearchResults.css";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { getAllBlogs } from "../redux/slices/blogsSlice";
+import { getAllBlogs, getAllBlogsSelector } from "../redux/slices/blogsSlice";
 import { getAllAuthors } from "../redux/slices/authorsSlice";
 import { useLocation } from "react-router-dom";
 import { getJWT, getProfile } from "../redux/slices/generalSlice";
@@ -16,8 +16,6 @@ const SearchResults = () => {
   const { search } = useLocation();
 
   const query = search.split("=")[1];
-
-  console.log(query);
 
   useEffect(() => {
     dispatch(getAllBlogs({ query, limit: 75 }));

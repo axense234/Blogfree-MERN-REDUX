@@ -28,7 +28,7 @@ const BlogProfileComp = ({ id, type, dispatch, jwt }) => {
     "Default Username";
 
   return (
-    <article className='blog-profile-comp-container'>
+    <article className='hidden blog-profile-comp-container'>
       <div className='blog-profile-comp-buttons-container'>
         <Reactions reactions={specificBlogReactions} />
         <BlogProfileButtonsComp

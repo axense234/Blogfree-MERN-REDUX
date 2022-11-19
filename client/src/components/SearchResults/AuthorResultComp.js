@@ -15,7 +15,7 @@ const AuthorResultComp = ({ authorId }) => {
   );
 
   return (
-    <article className='author-result-comp-container'>
+    <article className='hidden author-result-comp-container'>
       <FavoriteStar id={id} />
       <img src={imgUrl} alt={username} />
       <div className='author-result-comp-info'>

@@ -31,7 +31,7 @@ export const getAuthor = createAsyncThunk("authors/getAuthor", async (id) => {
 
 export const getAllAuthors = createAsyncThunk(
   "authors/getAllAuthors",
-  async ({ query = "", limit = 10 }) => {
+  async ({ query = "", limit = 25 }) => {
     console.log(limit, "limit look");
     try {
       console.log("get all authors");

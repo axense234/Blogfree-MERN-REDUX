@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import observer from "../../observer";
 // Components
 import AuthorResultComp from "./AuthorResultComp";
 import BlogResultComp from "./BlogResultComp";

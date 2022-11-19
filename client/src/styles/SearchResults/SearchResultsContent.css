@@ -31,6 +31,12 @@
   margin-top: 7.5rem;
 }
 
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0%);
+}
+
 @media all and (max-width: 1375px) {
   .search-results-temp-content-container {
     justify-content: center;

@@ -14,8 +14,8 @@ const SearchBarMobile = ({ setShow, sbmRef }) => {
   const input = useSelector(getSbmQueryInput);
 
   useEffect(() => {
-    dispatch(getAllBlogs({ query: input, limit: 10 }));
-    dispatch(getAllAuthors({ query: input, limit: 10 }));
+    dispatch(getAllBlogs({ query: input, limit: 25 }));
+    dispatch(getAllAuthors({ query: input, limit: 25 }));
   }, [input, dispatch]);
 
   return (

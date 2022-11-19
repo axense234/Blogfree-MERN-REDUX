@@ -22,7 +22,7 @@ const BASE_URL =
 
 export const getAllBlogs = createAsyncThunk(
   "blogs/getAllBlogs",
-  async ({ query = "", limit = 10 }) => {
+  async ({ query = "", limit = 25 }) => {
     try {
       const { data } = await axios.get(
         `${BASE_URL}/blogs/view-blogs?searchQuery=${query}&limit=${limit}`

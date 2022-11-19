@@ -13,7 +13,7 @@ const AuthorProfileComp = ({
   type,
 }) => {
   return (
-    <article className='author-profile-comp-container'>
+    <article className='hidden author-profile-comp-container'>
       <div className='author-profile-comp-buttons'>
         <img src={imgUrl} alt={username} />
         <AuthorProfileButtonsComp

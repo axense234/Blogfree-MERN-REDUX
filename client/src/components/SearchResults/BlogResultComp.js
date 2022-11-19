@@ -41,7 +41,7 @@ const BlogResultComp = ({ blogId }) => {
   }, [dispatch, author, blogAuthor]);
 
   return (
-    <article className='blog-result-comp-container'>
+    <article className='hidden blog-result-comp-container'>
       <FavoriteStar id={id} />
       <Reactions reactions={specificBlogReactions} />
       <div className='blog-result-comp-info'>

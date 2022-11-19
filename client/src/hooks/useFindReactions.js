@@ -7,8 +7,6 @@ import { updateBlog } from "../redux/slices/blogsSlice";
 const useFindReactions = (reactions, id, dispatch, jwt, clickable = true) => {
   let specificBlogReactions = [];
 
-  console.log(clickable);
-
   if (!clickable) {
     specificBlogReactions = Object.entries(
       reactions || TemplateCreateBlogPreview.reactions

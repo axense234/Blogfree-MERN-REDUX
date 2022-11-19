@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import observer from "./observer";
 // React Router
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Pages
@@ -17,8 +18,23 @@ import AuthorsList from "./pages/AuthorsList";
 import NotFound from "./pages/404";
 // Components
 import SharedLayout from "./components/Others/SharedLayout";
+// Redux
+import { useSelector } from "react-redux";
+import { getAllBlogsSelector } from "./redux/slices/blogsSlice";
+import { getAllAuthorsSelector } from "./redux/slices/authorsSlice";
 
 const App = () => {
+  const blogs = useSelector(getAllBlogsSelector);
+  const authors = useSelector(getAllAuthorsSelector);
+
+  useEffect(() => {
+    if (blogs.length >= 1 && authors.length >= 1) {
+      document
+        .querySelectorAll(".hidden")
+        .forEach((el) => observer.observe(el));
+    }
+  }, [blogs, authors]);
+
   return (
     <Router>
       <Routes>
