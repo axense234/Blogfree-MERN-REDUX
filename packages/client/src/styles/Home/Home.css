@@ -1,0 +1,36 @@
+.home-container {
+  padding: 10rem 12.5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page-content > img {
+  width: 573px;
+  height: 518px;
+}
+
+.home-page-content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 5rem;
+  gap: 15rem;
+  height: 100%;
+}
+
+@media all and (max-width: 1400px) {
+  .home-page-content > img {
+    display: none;
+  }
+  .home-page-content {
+    margin-bottom: 0;
+  }
+}
+
+@media all and (max-width: 430px) {
+  .home-container {
+    padding: 0rem 5rem;
+  }
+}

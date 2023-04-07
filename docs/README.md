@@ -1,29 +1,45 @@
-# Blogfree MERN Redux-Focused Project
+# **Blogfree - MERN Stack with Redux Project**
 
-## **Blogfree is a MERN(MongoDB Express.js React.js Node.js) Stack Project,with the focus on learning/practicing React-Redux and Redux.js Toolkit.**
+My second project using the MERN Stack, this time using React
+Redux for the first time.
 
-## **_Start the project locally:_**
+## **Description**
 
-```bash
-cd server
-npm test
+My second project using the MERN Stack, this time using React
+Redux for the first time.The project revoles around the idea of creating / viewing blogs you made / others made.You can also view other author's account, favorite blogs/authors, and much more.
 
-cd client
-npm start
+## **Getting Started**
+
+### Dependencies
+
+- Check package.json for details
+- Rename .env.sample to .env and place your respective env variables
+
+### Installing
+
+```
+git clone https://github.com/axense234/Blogfree-MERN-REDUX.git
+cd Blogfree-MERN-REDUX
+npm install
 ```
 
-## **_Pages(13 so far):_**
+### Executing program
 
-1. **/** --> **Home Route**
-1. **/signup** --> **Sign Up Route**
-1. **/login** --> **Login Route**
-1. **/contactus** --> **Contact Us Route**
-1. **/aboutus** --> **About Us Route**
-1. **/search-results** --> **Search Results Index Route**
-1. **/blogs** --> **Blogs Parent Route**
-   - **/edit-blog/:blogId** --> **Edit Blog Route**
-   - **/create-blog** --> **Create Blog Route**
-   - **/view-blog/:blogId** --> **View Blog Route**
-1. **/authors/** --> **Authors Parent Route**
-   - **/view-author/:authorId** --> **View Author Route**
-   - **/authors-list** --> **Authors List Route**
+```
+npm test
+```
+
+## **Version History**
+
+- 1.1.0
+  - Second version of the website after refactoring it. I upgraded it a bit by adding an overlay, form validation, more space on the pages.
+- 1.0.0
+  - See [commit change](https://github.com/axense234/Blogfree-MERN-REDUX/commits/master) or See [release history](https://github.com/axense234/Blogfree-MERN-REDUX/releases)
+- 1.0.0
+  - Initial Release
+
+## **License**
+
+This project is licensed under the GNU License - see the LICENSE.md file for details
+
+> Thanks for reading! - me

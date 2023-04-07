@@ -1,0 +1,57 @@
+.aboutus-section {
+  padding: 0rem 12.5rem;
+  padding-bottom: 15rem;
+  padding-top: 5rem;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.aboutus-page-content {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutus-page-content h1 {
+  font-size: var(--font-big);
+  letter-spacing: 9.6px;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.aboutus-page-content p {
+  font-size: 20px;
+}
+
+@media all and (max-width: 925px) {
+  .aboutus-section {
+    padding: 2rem 5rem;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .aboutus-page-content h1 {
+    font-size: 60px;
+  }
+  .aboutus-page-content p {
+    font-size: 15px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .aboutus-section {
+    padding: 2rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .aboutus-page-content h1 {
+    font-size: 35px;
+  }
+  .aboutus-page-content p {
+    font-size: 10px;
+  }
+}

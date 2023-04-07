@@ -1,0 +1,38 @@
+@keyframes vibration {
+  33% {
+    transform: translateX(-5%);
+  }
+  66% {
+    transform: translateX(0);
+  }
+  99% {
+    transform: translateX(5%);
+  }
+}
+
+.form-modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 1rem;
+
+  position: absolute;
+  top: 1rem;
+
+  display: none;
+  opacity: 0;
+  transform: scale(0);
+
+  animation: vibration 0.2s linear 4;
+
+  transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
+
+.form-modal-container > p {
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+}
